@@ -1,0 +1,28 @@
+{
+  "name": "itrix-2017",
+  "version": "1.0.0",
+  "description": "Source code for http://itrix.in",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Itrix",
+    "CEG",
+    "Anna",
+    "University",
+    "IST",
+    "ISTA",
+    "IT",
+    "Symposium",
+    "Technical",
+    "Fest"
+  ],
+  "author": "Arjun Mayilvaganan, Raakesh Madana, Thangaram Senthamaraikannan",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "mongojs": "^2.4.0"
+  }
+}
