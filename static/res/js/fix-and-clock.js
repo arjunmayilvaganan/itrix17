@@ -35,10 +35,9 @@ setInterval( function() {
 //-----------------------------------------------------------------------------------
 
 $('.submit').click(function() {
-	var ValPassword = $('#password').val() === 'admin';
+	var ValPassword = $('#number').val() === 'admin';
     if (ValPassword === true) {
-		$('input[type=password]').addClass('valid');
-		$('.tooltip-pass').hide();
+		$('#number').addClass('valid');
 		$('.submit').removeClass('submit').addClass('charge');
 		$('#pageLogin').addClass('initLog').delay(1900).queue(function() { $(this).removeClass('initLog').addClass('initLogExit'); $(this).dequeue(); });;
 		$('#page, #head').delay(2500).queue(function() { $(this).addClass('vis'); $(this).dequeue(); });
@@ -48,8 +47,7 @@ $('.submit').click(function() {
 		event.preventDefault();
     }
     else {
-		$('.tooltip-pass').hide();
-		$('input[type=password]').select();
+		$('#number').select();
     	$('.validate').addClass('error').delay(210).queue(function() { $(this).removeClass('error'); $(this).dequeue(); $('.tooltip-pass').show(); });
 			return false;
     	}
@@ -141,3 +139,4 @@ $("#trash a[data-rel=close]").click(function(e) {
 
 
 });
+
