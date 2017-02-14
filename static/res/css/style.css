@@ -40,8 +40,8 @@ html, body {
 	-webkit-user-select:none;
 	-moz-user-select:none;
 	user-select:none;
-	-webkit-animation:init 5s linear forwards;
-	-moz-animation:init 5s linear forwards;
+	-webkit-animation:init 6s linear forwards;
+	-moz-animation:init 6s linear forwards;
 }
 
 #pageLoading .apple-logo {
@@ -54,8 +54,8 @@ html, body {
 	margin-top:-60px;
 	background:url(../img/apple-logo-boot.png) center no-repeat;
 	visibility:hidden;
-	-webkit-animation:initApple 0.3s 2s linear forwards;
-	-moz-animation:initApple 0.3s 2s linear forwards;
+	-webkit-animation:initApple 0.3s 1s linear forwards;
+	-moz-animation:initApple 0.3s 1s linear forwards;
 }
 
 #pageLoading .spinner {
@@ -68,8 +68,8 @@ html, body {
 	margin-left:-18px;
 	margin-top:-19px;
 	visibility:hidden;
-	-webkit-animation:initLoading 4s 2s linear forwards;
-	-moz-animation:initLoading 4s 2s linear forwards;
+	-webkit-animation:initLoading 4s 1s linear forwards;
+	-moz-animation:initLoading 4s 1s linear forwards;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -84,8 +84,8 @@ html, body {
 	z-index:0;
 	visibility:hidden;
 	opacity:1;
-	-webkit-animation:initLoginWindow 0.5s 12s linear forwards;
-	-moz-animation:initLoginWindow 0.5s 12s linear forwards;
+	-webkit-animation:initLoginWindow 0.5s 4s linear forwards;
+	-moz-animation:initLoginWindow 0.5s 4s linear forwards;
 }
 #headlogin {
 	background:transparent;
@@ -135,13 +135,13 @@ html, body {
 	margin-left:-60px;
 	margin-top:-60px;
 	background:url(../img/apple-logo-login.png) center no-repeat;
-	-webkit-animation:initAppleLoginWindow 0.5s 7s linear forwards;
-	-moz-animation:initAppleLoginWindow 0.5s 7s linear forwards;
+	-webkit-animation:initAppleLoginWindow 0.5s 5.5s linear forwards;
+	-moz-animation:initAppleLoginWindow 0.5s 5.5s linear forwards;
 }
 #pageLogin .user-avatar {
 	opacity:0;
-	-webkit-animation:initUserAvatar 0.3s 13.7s linear forwards;
-	-moz-animation:initUserAvatar 0.3s 13.7s linear forwards;
+	-webkit-animation:initUserAvatar 0.3s 5.7s linear forwards;
+	-moz-animation:initUserAvatar 0.3s 5.7s linear forwards;
 }
 #pageLogin #avatar {
 	position:absolute;
@@ -343,18 +343,6 @@ html, body {
 	padding:0;
 	-webkit-animation:charge 1.2s linear forwards;
 	-moz-animation:charge 1.2s linear forwards;
-}
-#page:target #head {
-	-moz-animation:initDesktopHeader 0.5s 1.9s linear forwards;
-	-webkit-animation:initDesktopHeader 0.5s 1.9s linear forwards;
-}
-#page:target .window {
-	-moz-animation:initDesktopWindows 0.2s 2.8s linear;
-	-webkit-animation:initDesktopWindows 0.2s 2.8s linear;
-}
-#page:target {
-	-webkit-animation:initDesktop 0.3s 1.6s linear forwards;
-	-moz-animation:initDesktop 0.3s 1.6s linear forwards;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -782,14 +770,37 @@ a.button.blink:active, a.button.simple:active {
 	width:100%;
 	height:100%;
 	position:absolute;
-	z-index:0;
-	visibility:hidden;
-	opacity:1;
+	z-index: -1;
 	display:flex;
 	justify-content:center;
 	align-items:center;
-	-webkit-animation:initLoginWindow 0.5s 12s linear forwards;
-	-moz-animation:initLoginWindow 0.5s 12s linear forwards;
+}
+
+#register:target {
+	-webkit-animation:initDesktop 0.3s 1.6s linear forwards;
+	-moz-animation:initDesktop 0.3s 1.6s linear forwards;
+}
+
+#register.initReg {
+	-webkit-animation:initDesktopLogin 0.4s 1.5s linear forwards;
+	-moz-animation:initDesktopLogin 0.4s 1.5s linear forwards;
+	visibility:visible;
+	opacity:1;
+}
+
+#register.initRegExit {
+	visibility:hidden;
+	opacity:0;
+	-moz-animation:none;
+	-webkit-animation:none;
+}
+
+#register.vis {
+	visibility:visible;
+	opacity:1;
+	z-index:0;
+	-moz-animation:none;
+	-webkit-animation:none;
 }
 
 .regform {
@@ -816,3 +827,15 @@ select option:disabled {
 	font-weight: bold;
 }
 
+#head.target {
+	-moz-animation:initDesktopHeader 0.5s 1.9s linear forwards;
+	-webkit-animation:initDesktopHeader 0.5s 1.9s linear forwards;
+}
+.window.target {
+	-moz-animation:initDesktopWindows 0.2s 2.8s linear;
+	-webkit-animation:initDesktopWindows 0.2s 2.8s linear;
+}
+#page.target {
+	-webkit-animation:initDesktop 0.3s 1.6s linear forwards;
+	-moz-animation:initDesktop 0.3s 1.6s linear forwards;
+}

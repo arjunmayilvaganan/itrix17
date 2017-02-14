@@ -40,10 +40,7 @@ $('.submit').click(function() {
 		$('#number').addClass('valid');
 		$('.submit').removeClass('submit').addClass('charge');
 		$('#pageLogin').addClass('initLog').delay(1900).queue(function() { $(this).removeClass('initLog').addClass('initLogExit'); $(this).dequeue(); });;
-		$('#page, #head').delay(2500).queue(function() { $(this).addClass('vis'); $(this).dequeue(); });
-		$('.window').delay(3000).queue(function() { $(this).addClass('windows-vis'); $(this).dequeue(); });
-		$('#finder').hide();
-		$('#content').hide();
+		$('#register').delay(2500).queue(function() { $(this).addClass('vis'); $(this).dequeue(); });
 		event.preventDefault();
     }
     else {
@@ -139,4 +136,20 @@ $("#trash a[data-rel=close]").click(function(e) {
 
 
 });
+
+//-----------------------------------------------------------------------------------
+//	6.	Fix Classes after Register
+//-----------------------------------------------------------------------------------
+
+function redirectPage(){
+	$('#register').addClass('initReg').delay(1900).queue(function() { $(this).removeClass('initReg').addClass('initRegExit'); $(this).dequeue(); });;
+	$('#page').addClass('target');
+	$('#head').addClass('target');
+	$('.window').addClass('target');
+	$('#page, #head').delay(2500).queue(function() { $(this).addClass('vis'); $(this).dequeue(); });
+	$('.window').delay(3000).queue(function() { $(this).addClass('windows-vis'); $(this).dequeue(); });
+	$('#finder').hide();
+	$('#content').hide();
+	event.preventDefault();
+}
 
