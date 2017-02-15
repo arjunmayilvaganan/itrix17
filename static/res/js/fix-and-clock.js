@@ -104,7 +104,6 @@ $(".dock li a[data-rel=showOp]").click(function(e) {
 $("#finder a[data-rel=close]").click(function(e) {
     e.preventDefault();
 	item.fadeOut(500);
-	$('#content').hide();
     $(this.hash).hide();
 });
 
@@ -116,10 +115,27 @@ $("ul#sidebarlinks li").click(function(e) {
     $('#content').show();
 });
 
-$("#webtrix").click(function(e){
-	e.preventDefault();
-	$(this).addClass('focus');
-	console.log('added focus');
+// folder click 
+
+$("#content span").click(function(e) {
+		e.stopPropagation();
+		if (e.shiftKey) {
+				//Shift-Click
+				$(this).addClass("focus");
+		} else {
+				$(".focus").removeClass("focus");
+				$(this).addClass("focus");
+		}
+});
+$("body:not(#content span)").click(function() {
+		$("#content span").removeClass("focus");
+
+});
+
+$("#content span").dblclick(function() {
+	$('#about-this-mac').show();
+	$('#finder').css('zIndex', '-1');
+
 });
 
 $(".dock li a[data-rel=showOpTrash]").click(function(e) {
@@ -152,4 +168,3 @@ function redirectPage(){
 	$('#content').hide();
 	event.preventDefault();
 }
-
