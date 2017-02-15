@@ -803,6 +803,17 @@ a.button.blink:active, a.button.simple:active {
 	-webkit-animation:none;
 }
 
+#register .reg-apple-logo {
+	position:absolute;
+	width:120px;
+	height:120px;
+	left:50%;
+	top:25%;
+	margin-left:-60px;
+	margin-top:-60px;
+	background:url(../img/apple-logo-login.png) center no-repeat;
+}
+
 .regform {
 	width:350px;
 	height:28px;
@@ -821,10 +832,28 @@ a.button.blink:active, a.button.simple:active {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
+	top: 15%;
 }
 
 select option:disabled {
 	font-weight: bold;
+}
+
+#first_name:focus {
+	box-shadow:0 0 2px 3px #4189c3;
+}
+
+#last_name:focus {
+	box-shadow:0 0 2px 3px #4189c3;
+}
+
+#email:focus {
+	box-shadow:0 0 2px 3px #4189c3;
+}
+
+#regsubmit:focus {
+	box-shadow:0 0 2px 3px #4189c3;
 }
 
 #head.target {
