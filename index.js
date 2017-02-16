@@ -10,7 +10,7 @@ var port = process.env.PORT || 8080
 var dbUrl = 'mongodb://'+ process.env.dbUser +':'+ process.env.dbPass +'@localhost:27017/itrix?authSource=admin'
 var db = mongojs(dbUrl)
 var registrations = db.collection('registrations')
-var otp = db.collection('otp')
+var otps = db.collection('otps')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
@@ -44,7 +44,7 @@ app.get('/checkregistered', function(req, res) {
 					if(err) console.log(err)
 					else
 					{
-						otp.update({"mobile": number}, {"mobile": number, "otp": res.body.response.oneTimePassword}, {"upsert": true})
+						otps.update({"mobile": number}, {"mobile": number, "otp": res.body.response.oneTimePassword}, {"upsert": true})
 						console.log(res.body.response.oneTimePassword)
 					}
 				});
@@ -58,7 +58,7 @@ app.get('/verifyotp', function(req, res) {
 	var number = req.query.number
 	var otp = req.query.otp
 	console.log('Verify OTP values: ', number, otp)
-	otp.findOne({"mobile": number}, function(err, doc) {
+	otps.findOne({"mobile": number}, function(err, doc) {
 		if(err) console.log(err)
 		else
 		{
