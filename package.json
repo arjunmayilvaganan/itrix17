@@ -23,6 +23,8 @@
   "dependencies": {
     "body-parser": "^1.16.1",
     "express": "^4.14.1",
-    "mongojs": "^2.4.0"
+    "mongojs": "^2.4.0",
+    "superagent": "^3.4.3"
   }
 }
+

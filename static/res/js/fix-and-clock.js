@@ -34,20 +34,49 @@ setInterval( function() {
 //	2.	Fix Classes after Validate Login
 //-----------------------------------------------------------------------------------
 
-$('.submit').click(function() {
-	var ValPassword = $('#number').val() === 'admin';
-    if (ValPassword === true) {
-		$('#number').addClass('valid');
-		$('.submit').removeClass('submit').addClass('charge');
-		$('#pageLogin').addClass('initLog').delay(1900).queue(function() { $(this).removeClass('initLog').addClass('initLogExit'); $(this).dequeue(); });;
-		$('#register').delay(2500).queue(function() { $(this).addClass('vis'); $(this).dequeue(); });
-		event.preventDefault();
+$(".submit").click(function(e) {
+	e.preventDefault();
+	if($('#number').attr('data-rel') == 'initotp'){
+		var number = $('#number').val();
+		if(number.length == 10)
+		{
+			var req = {"number": number};
+			$.get('/checkregistered', req, function(data) {
+				if(data == 'registered')
+				{
+					redirectPage();
+				}
+				else
+				{
+					$('#number').addClass('valid');
+					$('.submit').removeClass('submit').addClass('charge');
+					$('#number').attr('placeholder', "Enter the OTP");
+					$('#number').attr('data-rel', 'initreg');
+					$('#number').attr('number', number);
+					$('#number').val('');	
+					$('#mobile').attr('value', number);
+				}
+			});
+		}
+	}
+	else if($('#number').attr('data-rel') == 'initreg'){
+		var otp = $('#number').val();
+		var number = $('#number').attr('number');
+		var req = {"otp": otp, "number": number };
+		$.get('/verifyotp', req, function(data) {
+			if(data == 'true'){
+				$("number").addClass('valid');
+				$('.submit').removeClass('submit').addClass('charge');
+				$('#pageLogin').addClass('initLog').delay(1900).queue(function() { $(this).removeClass('initLog').addClass('initLogExit'); $(this).dequeue(); }); 
+				$('#register').delay(2500).queue(function() { $(this).addClass('vis'); $(this).addClass('vis'); $(this).dequeue(); });
+			}	
+			else {
+				$("#number").select();
+				$(".validate").addClass('error').delay(210).queue(function() { $(this).removeClass('error'); $(this).dequeue(); });
+				return false;
+			}
+		});
     }
-    else {
-		$('#number').select();
-    	$('.validate').addClass('error').delay(210).queue(function() { $(this).removeClass('error'); $(this).dequeue(); $('.tooltip-pass').show(); });
-			return false;
-    	}
 });
 
 //-----------------------------------------------------------------------------------
@@ -107,6 +136,22 @@ $("#finder a[data-rel=close]").click(function(e) {
     $(this.hash).hide();
 });
 
+$("#number").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+             // Allow: Ctrl+A, Command+A
+            (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) || 
+             // Allow: home, end, left, right, down, up
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+                 // let it happen, don't do anything
+                 return;
+		}
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+});
+
 $("ul#sidebarlinks li").click(function(e) {
     e.preventDefault();
     console.log('your message');
@@ -158,6 +203,18 @@ $("#trash a[data-rel=close]").click(function(e) {
 //-----------------------------------------------------------------------------------
 
 function redirectPage(){
+	var req = {};
+	req.fname = $("#first_name").val();
+	req.lname = $("#last_name").val();
+	req.mobile = $("#mobile").attr('value');
+	req.gender = $('input[name=sex]:checked').val();
+	req.email = $("#email").val();
+	req.clg = $("#clg").find(":selected").text();
+	req.dept = $("#dept").find(":selected").text();
+	req.year = $("#year").val();
+	$.post('/register', req, function(data) {
+		console.log(data)
+	});
 	$('#register').addClass('initReg').delay(1900).queue(function() { $(this).removeClass('initReg').addClass('initRegExit'); $(this).dequeue(); });;
 	$('#page').addClass('target');
 	$('#head').addClass('target');
@@ -168,3 +225,4 @@ function redirectPage(){
 	$('#content').hide();
 	event.preventDefault();
 }
+

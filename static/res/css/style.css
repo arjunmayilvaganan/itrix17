@@ -811,7 +811,7 @@ span.focus:after {
 	align-items:center;
 }
 
-#register:target {
+#register.target {
 	-webkit-animation:initDesktop 0.3s 1.6s linear forwards;
 	-moz-animation:initDesktop 0.3s 1.6s linear forwards;
 }
