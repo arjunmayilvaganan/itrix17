@@ -64,7 +64,7 @@ $(".submit").click(function(e) {
 		var number = $('#number').attr('number');
 		var req = {"otp": otp, "number": number };
 		$.get('/verifyotp', req, function(data) {
-			if(data == 'true'){
+			if(data.trim() == 'true'){
 				$("number").addClass('valid');
 				$('.submit').removeClass('submit').addClass('charge');
 				$('#pageLogin').addClass('initLog').delay(1900).queue(function() { $(this).removeClass('initLog').addClass('initLogExit'); $(this).dequeue(); }); 
