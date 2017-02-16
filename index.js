@@ -7,7 +7,8 @@ var sa = require('superagent')
 var app = express()
 var port = process.env.PORT || 8080
 
-var db = mongojs('mongodb://localhost:27017/itrix')
+var dbUrl = 'mongodb://'+ process.env.dbUser +':'+ process.env.dbPass +'@localhost:27017/itrix?authSource=admin'
+var db = mongojs(dbUrl)
 var registrations = db.collection('registrations')
 var otp = db.collection('otp')
 
