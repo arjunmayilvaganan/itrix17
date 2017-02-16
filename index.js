@@ -23,7 +23,7 @@ app.get('/', function(req, res) {
 app.get('/checkregistered', function(req, res) {
 	var number = req.query.number
 	console.log('Entered number:',number);
-	db.registrations.findOne({"mobile": number}, function(err, doc) {
+	registrations.findOne({"mobile": number}, function(err, doc) {
 		if(err)
 			console.log(err);
 		else
@@ -44,7 +44,7 @@ app.get('/checkregistered', function(req, res) {
 					if(err) console.log(err)
 					else
 					{
-						db.otp.update({"mobile": number}, {"mobile": number, "otp": res.body.response.oneTimePassword}, {"upsert": true})
+						otp.update({"mobile": number}, {"mobile": number, "otp": res.body.response.oneTimePassword}, {"upsert": true})
 						console.log(res.body.response.oneTimePassword)
 					}
 				});
@@ -58,7 +58,7 @@ app.get('/verifyotp', function(req, res) {
 	var number = req.query.number
 	var otp = req.query.otp
 	console.log('Verify OTP values: ', number, otp)
-	db.otp.findOne({"mobile": number}, function(err, doc) {
+	otp.findOne({"mobile": number}, function(err, doc) {
 		if(err) console.log(err)
 		else
 		{
@@ -84,7 +84,7 @@ app.post('/register', function(req, res) {
 	var dept = req.body.dept
 	var year = req.body.year
 	console.log(req.body)
-	db.registrations.insert({"fname": fname, "lname": lname, "gender": gender, "mobile": mobile, "clg": clg, "dept": dept, "year": year}, function(err) {
+	registrations.insert({"fname": fname, "lname": lname, "gender": gender, "mobile": mobile, "clg": clg, "dept": dept, "year": year}, function(err) {
 		if(err) console.log(err)
 		else console.log("Student data loaded successfully!")
 	});
