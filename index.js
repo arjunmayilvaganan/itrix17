@@ -72,15 +72,15 @@ app.get('/verifyotp', function(req, res) {
 })
 
 app.post('/register', function(req, res) {
-	var fname = req.query.fname
-	var lname = req.query.lname
-	var gender = req.query.gender
-	var mobile = req.query.mobile
-	var email = req.query.email
-	var clg = req.query.clg
-	var dept = req.query.dept
-	var year = req.query.year
-	console.log(req.query)
+	var fname = req.body.fname
+	var lname = req.body.lname
+	var gender = req.body.gender
+	var mobile = req.body.mobile
+	var email = req.body.email
+	var clg = req.body.clg
+	var dept = req.body.dept
+	var year = req.body.year
+	console.log(req.body)
 	db.registrations.insert({"fname": fname, "lname": lname, "gender": gender, "mobile": mobile, "clg": clg, "dept": dept, "year": year}, function(err) {
 		if(err) console.log(err)
 		else console.log("Student data loaded successfully!")
