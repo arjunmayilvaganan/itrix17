@@ -154,10 +154,24 @@ $("#number").keydown(function (e) {
 
 $("ul#sidebarlinks li").click(function(e) {
     e.preventDefault();
-    console.log('your message');
     $("ul#sidebarlinks li.current_page").removeClass("current_page");
     $(this).addClass("current_page");
     $('#content').show();
+    if($(this).attr('id') == 'sidebarevents') {
+    	$('#content_workshop').hide();
+    	$('#content_intern').hide();
+    	$('#content_event').show();
+    }
+    else if($(this).attr('id') == 'sidebarworkshop') {
+    	$('#content_workshop').show();
+    	$('#content_intern').hide();
+    	$('#content_event').hide();
+    }
+    else if($(this).attr('id') == 'sidebarinternship') {
+    	$('#content_workshop').hide();
+    	$('#content_intern').show();
+    	$('#content_event').hide();
+    }
 });
 
 // folder click 
@@ -264,7 +278,7 @@ $(function() {
 			year: "*Year is required"
 		},
 		submitHandler: function(form) {	
-			form.submit();
+			
 			var req = {};
 			req.fname = $("#first_name").val();
 			req.lname = $("#last_name").val();
@@ -289,4 +303,3 @@ $(function() {
 		}
 	});
 });
-

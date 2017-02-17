@@ -52,7 +52,7 @@ html, body {
 	top:50%;
 	margin-left:-60px;
 	margin-top:-60px;
-	background:url(../img/apple-logo-boot.png) center no-repeat;
+	background:url(../img/itrix_logo.png) center no-repeat;
 	visibility:hidden;
 	-webkit-animation:initApple 0.3s 1s linear forwards;
 	-moz-animation:initApple 0.3s 1s linear forwards;
@@ -134,7 +134,7 @@ html, body {
 	top:50%;
 	margin-left:-60px;
 	margin-top:-60px;
-	background:url(../img/apple-logo-login.png) center no-repeat;
+	background:url(../img/itrix_logo_login.png) center no-repeat;
 	-webkit-animation:initAppleLoginWindow 0.5s 5.5s linear forwards;
 	-moz-animation:initAppleLoginWindow 0.5s 5.5s linear forwards;
 }
@@ -152,69 +152,12 @@ html, body {
 	margin-left:-49px;
 	margin-top:-49px;
 }
-.ava-css {
-	height:90px;
-    width:90px;
-	left: 50%;
-	top: 50%;
-    margin-left: -49px;
-    margin-top: -49px;
-    display: block;
-    border-radius: 100%;
-    padding: 4px;
-    background: -moz-linear-gradient(#fdfdfd, #c9c9c9);
-	background: -webkit-linear-gradient(#fdfdfd, #c9c9c9);
-	border:1px solid #434448;
-	position:absolute;
-}
-.ava-css img {
-    display: block;
-    border-radius: 100%;
-	position:relative;
-	width:91px;
-	height:91px;
-	left:-1px;
-	top:-1px;
-}
-.ava-css:before, .ava-css:after {
-    width: 90px;
-    height: 90px;
-    content: '';
-    display: block;
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    z-index: 5;
-    pointer-events: none;
-    border-radius: 100%;
-}
-.ava-css:before {
-	border:1px solid #434448;
-}
-.ava-css:after {
-    background: -moz-linear-gradient(-45deg, rgba(255,255,255,.0), rgba(255,255,255,0.33) 50%, rgba(255,255,255,.0) 50%);
-	background: -webkit-linear-gradient(-45deg, rgba(255,255,255,.0), rgba(255,255,255,0.33) 50%, rgba(255,255,255,.0) 50%);
-}
-#cover {
-    background:rgba(0,0,0,0.35);
-	box-shadow: 0 0 5px 2px rgba(0,0,0,0.3);
-    border-radius: 100% 100% 100% 100%;
-    height: 98px;
-    left: 1px;
-    position: absolute;
-    top: 1px;
-    width: 98px;
-    z-index: 9;
-	opacity:0;
-}
 
 .show {display: none; }
 .hide:target + .show { display:inline; }
 .hide:target {display: none; }
 #switch { -webkit-animation:show 0.25s ease-in forwards; -moz-animation:show 0.25s ease-in forwards; }
 .hide:target ~ #switch { -webkit-animation:delete 0.25s ease-in-out forwards; -moz-animation:delete 0.25s ease-in-out forwards; }
-.hide:target ~ .logName { -moz-transform:translateX(10px); -moz-transition:all 0.3s linear; -webkit-transform:translateX(10px); -webkit-transition:all 0.3s linear; }
-.show:target ~ .logName { -moz-transform:translateX(0px); -moz-transition:all 0.3s linear; -webkit-transform:translateX(0px); -webkit-transition:all 0.3s linear;}
 .hide:active ~ #cover, .show:active ~ #cover { opacity:1; }
 @media print { .hide, .show { display: none; } }
 
@@ -241,21 +184,6 @@ html, body {
 	z-index:10;
 }
 
-#pageLogin .user-avatar .logName{
-	position:absolute;
-	left:50%;
-	top:100%;
-	margin:10px 0 0 -90px;
-	width:184px;
-	text-align:center;
-	font-size:12px;
-	color:#fff;
-	letter-spacing:1px;
-	text-shadow:1px 1px 2px #000;
-	-webkit-user-select:none;
-	-moz-user-select:none;
-	user-select:none;
-}
 
 .text{
 	font-size:12px;
@@ -759,19 +687,19 @@ a.button.blink:active, a.button.simple:active {
 #content span.icon {
 	display: block;
 	float: left;
-	margin: 8px;
+	margin: 12px;
+	padding-bottom: 8px;
 	transition: all 0.2s;
 	width: auto;
 	z-index: 1;
 	text-align: center;
 }
 #content span.icon:after{
-	color: #fff;
+	color: #000;
 	content: attr(data-title);
 	display: block;
 	margin-bottom: 15px;
 	padding: 2px 10px;
-	text-shadow: 0px 0px 4px #000;
 	transition: all 0.2s;
 }
 
@@ -790,6 +718,7 @@ a.button.blink:active, a.button.simple:active {
 }
 
 span.focus:after {
+	color: #fff !important;
 	background: #51a0d7;
 	border-radius: 15px;
 	text-shadow: none!important;
@@ -846,7 +775,7 @@ span.focus:after {
 	top:25%;
 	margin-left:-60px;
 	margin-top:-60px;
-	background:url(../img/apple-logo-login.png) center no-repeat;
+	background:url(../img/itrix_logo_login.png) center no-repeat;
 }
 
 .regform {
@@ -903,8 +832,14 @@ select option:disabled {
 	-webkit-animation:initDesktop 0.3s 1.6s linear forwards;
 	-moz-animation:initDesktop 0.3s 1.6s linear forwards;
 }
+.itrix_text{
+	position: absolute;
+    width: 450px;
+    height: 250px;
+    top: -75px;
+    right: -180px;
+}
 label.error{
 	color: tomato;
 	text-shadow: indianred 0px 0px 1px;
 }
-

@@ -6,7 +6,6 @@
 <link rel="stylesheet" type="text/css" media="screen" href="res/css/style2.css"/>
 <link rel="stylesheet" type="text/css" media="screen" href="res/css/style.css"/>
 <title>Itrix</title>
-<meta name="description" content="Mac Os X Lion with CSS3 Experiment - I wanted to create with only use of CSS3 the boot, the login page and finally the desktop of the Mac OS X Lion." />
 
 <script type="text/javascript" src="res/js/jquery-3.1.1.min.js"></script>
 
@@ -21,8 +20,8 @@
 
 <!-- FAIL -->
 <div id="fail">
-	<div class="fail-browser-logo">
-    	<img src="res/img/apple-logo-login.png" alt="Mac OS X" />
+    <div class="fail-browser-logo">
+        <img src="res/img/itrix_logo.png" alt="Itix" />
     </div>
     <div class="fail-browser">
         <p><strong>I'm sorry to inform you that your browser don't support CSS3 Animations!</strong></p> 
@@ -32,46 +31,42 @@
 
 <!-- BOOT -->
 <div id="pageLoading">
-	<div class="loading">
-		<div class="apple-logo"></div>
+    <div class="loading">
+        <div class="apple-logo"></div>
         <div class="spinner"></div>
-	</div>
+    </div>
 </div>
 
 <!-- LOGIN -->
 <div id="pageLogin">
-	<header id="headlogin">
-		<nav id="menu-dx-login">
-    	<ul>
-   			<li class="wireless"></li>
-    		<li class="time">
-    		<ul>
-				<li class="hours"> </li>
-    			<li class="point">:</li>
-    			<li class="min"> </li>
-        	</ul>
-    		</li>
-		</ul>
-    	</nav>
+    <header id="headlogin">
+        <nav id="menu-dx-login">
+        <ul>
+            <li class="wireless"></li>
+            <li class="time">
+            <ul>
+                <li class="hours"> </li>
+                <li class="point">:</li>
+                <li class="min"> </li>
+            </ul>
+            </li>
+        </ul>
+        </nav>
     </header>
-	<div class="new-apple-logo"></div>
+    <div class="new-apple-logo"></div>
     
     <div class="user-avatar">
         <div id="avatar">
         <a href="#hide" class="hide" id="hide"></a>
         <a href="#show" class="show" id="show"></a>
-        <div id="cover"></div>
-        <div class="ava-css">
-        <img src="res/img/Lion.gif" />
-        </div>
-        <div class="logName">
-        <p>Alessio Atzeni</p>
+        <div class="itrix_text">
+        <img src="res/img/rsz_itrix_text.png" />
         </div>
         <div id="switch">
         <div class="validate">
         <form action="#register">
             <input type="text" id="number" placeholder="Phone number" maxlength="10" data-rel="initotp" />
-            	<input type="submit" class="submit" />
+                <input type="submit" class="submit" />
         </form>
         </div>
         </div>
@@ -81,39 +76,39 @@
 
 <!-- REGISTER -->
 <div id="register">
-	<div class="reg-apple-logo"></div>
+    <div class="reg-apple-logo"></div>
 
-	<div id="formdiv">	
-		<form id="regForm">
-			<input type="text" name="firstname" id="first_name" class="regform"  placeholder="First Name" /> <br><br>
-			<input type="text" name="lastname" id="last_name" class="regform" placeholder="Last Name" /> <br><br>
-			<input type="radio" name="sex" value="female"><span class="text">Female</span>
-			<input type="radio" name="sex" value="male"><span class="text">Male</span>
-			<input type="radio" name="sex" value="other"><span class="text">Other</span> <br><br>
-			<input type="text" name="email" id="email" class="regform" placeholder="Email" /> <br><br>
-			<input id="clg" name="clg" class="regform" placeholder="College" /> <br><br>
-			<input id="dept" name="dept" class="regform" placeholder="Branch of study" /> <br><br>
-			<select class="regform" name="year" id="year">
-				<option label="Year" selected disabled />
-				<option value="1" label="I" />
-				<option value="2" label="II" />
-				<option value="3" label="III" />
-				<option value="4" label="IV" />
-				<option value="5" label="V" />
-			</select><br><br><br>
-			<input type="hidden" id="mobile" />
-			<button type="submit" id="regsubmit" class="regform">Submit</button>
-		</form>
-	</div>	
+    <div id="formdiv">  
+        <form id="regForm">
+            <input type="text" name="firstname" id="first_name" class="regform"  placeholder="First Name" /> <br><br>
+            <input type="text" name="lastname" id="last_name" class="regform" placeholder="Last Name" /> <br><br>
+            <input type="radio" name="sex" value="female"><span class="text">Female</span>
+            <input type="radio" name="sex" value="male"><span class="text">Male</span>
+            <input type="radio" name="sex" value="other"><span class="text">Other</span> <br><br>
+            <input type="text" name="email" id="email" class="regform" placeholder="Email" /> <br><br>
+            <input id="clg" name="clg" class="regform" placeholder="College" /> <br><br>
+            <input id="dept" name="dept" class="regform" placeholder="Branch of study" /> <br><br>
+            <select class="regform" name="year" id="year">
+                <option label="Year" selected disabled />
+                <option value="1" label="1" />
+                <option value="2" label="2" />
+                <option value="3" label="3" />
+                <option value="4" label="4" />
+                <option value="5" label="5" />
+            </select><br><br><br>
+            <input type="hidden" id="mobile" />
+            <button type="submit" id="regsubmit" class="regform">Submit</button>
+        </form>
+    </div>  
 </div>
     
 <!-- DESKTOP -->
 <div id="page">
 <header id="head">
-	<nav id="menu">
-    	<ul>
+    <nav id="menu">
+        <ul>
         <li class="apple">
-        	<a href="#all">Apple</a>
+            <a href="#all">Apple</a>
             <ul class="sublist">
             <li><a href="#about-this-mac" data-rel="show">About This Mac</a></li>
             <li>Software Updates...</li>
@@ -121,7 +116,7 @@
             <li class="divider"></li>
             <li>System Preferences...</li>
             <li>Dock
-            	<span class="arrow"></span>
+                <span class="arrow"></span>
                 <ul class="sublist-menu">
                 <li>Turn Hiding Off</li>
                 <li>Turn Magnification Off</li>
@@ -135,7 +130,7 @@
             </li>
             <li class="divider"></li>
             <li>Recent Items
-            	<span class="arrow"></span>
+                <span class="arrow"></span>
                 <ul class="sublist-menu">
                 <li class="disable">Applications</li>
                 <li class="divider"></li>
@@ -157,8 +152,8 @@
             </ul>
         </li>
         <li class="here">
-        	<a href="#all">Finder</a>
-        	<ul class="sublist">
+            <a href="#all">Finder</a>
+            <ul class="sublist">
             <li><a href="#finder" data-rel="show">About Finder</a></li>
             <li class="divider"></li>
             <li>Preferences...</li>
@@ -166,7 +161,7 @@
             <li>Secure Empty Trash...</li>
             <li class="divider"></li>
             <li>Services
-            	<span class="arrow"></span>
+                <span class="arrow"></span>
                 <ul class="sublist-menu">
                 <li class="disable">No Services Apply</li>
                 <li>Services Preferences...</li>
@@ -179,7 +174,7 @@
             </ul>
         </li>
         <li>
-        	<a href="#all">File</a>   
+            <a href="#all">File</a>   
             <ul class="sublist">
             <li>New Finder Window</li>
             <li>New Folder</li>
@@ -188,7 +183,7 @@
             <li>New Burn Folder</li>
             <li class="disable">Open</li>
             <li class="disable">Open With
-            	<span class="arrow"></span>
+                <span class="arrow"></span>
             </li>
             <li class="disable">Print</li>
             <li class="disable">Close Window</li>
@@ -213,8 +208,8 @@
             </ul> 
         </li>
         <li>
-        	<a href="#all">Edit</a>
-        	<ul class="sublist">
+            <a href="#all">Edit</a>
+            <ul class="sublist">
             <li class="disable">Undo</li>
             <li class="disable">Redo</li>
             <li class="divider"></li>
@@ -229,8 +224,8 @@
             </ul>
         </li>
         <li>
-        	<a href="#all">View</a>
-        	<ul class="sublist">
+            <a href="#all">View</a>
+            <ul class="sublist">
             <li class="disable">as Icons</li>
             <li class="disable">as List</li>
             <li class="disable">as Columns</li>
@@ -238,7 +233,7 @@
             <li class="divider"></li>
             <li>Clean Up</li>
             <li>Clean Up By
-            	<span class="arrow"></span>
+                <span class="arrow"></span>
                 <ul class="sublist-menu">
                 <li>Name</li>
                 <li>Kind</li>
@@ -249,7 +244,7 @@
                 </ul>
             </li>
             <li>Sort By
-            	<span class="arrow"></span>
+                <span class="arrow"></span>
                 <ul class="sublist-menu">
                 <li>None</li>
                 <li class="divider"></li>
@@ -277,8 +272,8 @@
             </ul>    
         </li>
         <li>
-        	<a href="#all">Go</a>
-        	<ul class="sublist">
+            <a href="#all">Go</a>
+            <ul class="sublist">
             <li class="disable">Back</li>
             <li class="disable">Forward</li>
             <li>Enclosing Folder</li>
@@ -295,7 +290,7 @@
             <li>Utilities</li>
             <li class="divider"></li>
             <li>Recent Folders
-            	<span class="arrow"></span>
+                <span class="arrow"></span>
                 <ul class="sublist-menu">
                 <li>2012-01-10</li>
                 <li>Archieves</li>
@@ -312,8 +307,8 @@
             </ul>    
         </li>
         <li>
-        	<a href="#all">Window</a>
-         	<ul class="sublist">
+            <a href="#all">Window</a>
+            <ul class="sublist">
             <li class="disable">Minimize</li>
             <li class="disable">Zoom</li>
             <li class="disable">Cycle Through Windows</li>
@@ -323,40 +318,40 @@
         </li>
         <li><a href="#all">Help</a></li>
         </ul>
-	</nav>
+    </nav>
     <nav id="menu-dx">
-    	<ul>
+        <ul>
         <li class="wireless">
-        	<a href="#all">Wireless</a>
+            <a href="#all">Wireless</a>
         </li>
         <li class="time">
-        	<ul>
+            <ul>
             <li id="DateAbbr"> </li>
             <li class="hour"> </li>
-    		<li class="point">:</li>
-    		<li class="mins"> </li>
+            <li class="point">:</li>
+            <li class="mins"> </li>
             </ul>
         </li>
         <li class="username">
-        	<a href="#all">Alessio Atzeni</a>
+            <a href="#all">UserName</a>
         </li>
-		</ul>
+        </ul>
     </nav>
 </header>
 
 
 <div id="about-this-mac" class="window mac">
-	<nav class="control-window">
+    <nav class="control-window">
     <a href="#about-this-mac" class="close" data-rel="close">close</a>
     <a href="#" class="deactivate">deactivate</a>
     <a href="#" class="deactivate">deactivate</a>
     </nav>
     <h1 class="title-mac">About This Mac</h1>
     <div class="container">
-    	<div class="container-inside">
-    	<img src="res/img/MacOSX.png" alt="Mac OS X"/>
-    	<div class="about-this">
-    	<p>Version 10.7.2</p>
+        <div class="container-inside">
+        <img src="res/img/MacOSX.png" alt="Mac OS X"/>
+        <div class="about-this">
+        <p>Version 10.7.2</p>
         <p><a class="button about" href="#">Software Update...</a></p>
         <ul class="hardware">
         <li><strong>Processor</strong> 2 Ghz Intel Core 2 Duo</li>
@@ -364,12 +359,12 @@
         <li><strong>Startup Disk</strong> Macintosh HD</li>
         </ul>
         <p><a class="button about" href="#">More Info...</a></p>
-    	<div class="copyright">
-    	<p>TM and © 1983-2011 Apple Inc</p>
+        <div class="copyright">
+        <p>TM and © 1983-2011 Apple Inc</p>
         <p>All Rights Reserved</p>
-    	</div>
-    	</div>
-    	</div>
+        </div>
+        </div>
+        </div>
     </div>
 </div> 
 
@@ -438,15 +433,42 @@
 
 
 
-    <div id='content'>
-      <span class="icon" id="icon1" data-title="Webtrix"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
-      <span class="icon" id="icon1" data-title="Event2"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
-      <span class="icon" id="icon1" data-title="Event3"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
-      <span class="icon" id="icon1" data-title="Event4"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
-      <span class="icon" id="icon1" data-title="Event5"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
-      <span class="icon" id="icon1" data-title="Event6"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+    <div id="content">
+    <div id='content_event'>
+      <span class="icon" id="webtrix" data-title="Webtrix"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="event2" data-title="Event2"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="event3" data-title="Event3"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="event4" data-title="Event4"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="event5" data-title="Event5"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="event6" data-title="Event6"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="event7" data-title="Event7"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="event8" data-title="Event8"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="event9" data-title="Event9"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="event10" data-title="Event10"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="event11" data-title="Event11"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="event12" data-title="Event12"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="event13" data-title="Event13"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="event14" data-title="Event14"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="event15" data-title="Event15"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="event16" data-title="Event16"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
       
     </div>
+    <div id='content_workshop'>
+      <span class="icon" id="icon1" data-title="workshop1"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="icon1" data-title="workshop2"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="icon1" data-title="workshop3"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="icon1" data-title="workshop4"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      
+    </div>
+
+    <div id='content_intern'>
+      <span class="icon" id="icon1" data-title="intern1"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="icon1" data-title="intern2"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      <span class="icon" id="icon1" data-title="intern3"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/237800/mac-hard-drive-icon.png"></span>
+      
+    </div>
+</div>
+
 
     <!-- Content -->
 
@@ -457,76 +479,76 @@
 
 <!-- DOCK -->
 <div class="dock">
-	<ul>
-    	<li id="finderr">
-        	<a href="#warning" data-rel="showOp">
-            	<em><span>Finder</span></em>
+    <ul>
+        <li id="finderr">
+            <a href="#warning" data-rel="showOp">
+                <em><span>Finder</span></em>
                 <img src="res/img/FinderIcon.png" alt="Finder"/>
             </a>
         </li>
         <li id="launchPad">
-        	<a href="#warning" data-rel="showOp">
-            	<em><span>Launchpad</span></em>
+            <a href="#warning" data-rel="showOp">
+                <em><span>Launchpad</span></em>
                 <img src="res/img/launchPad.png" alt="Launchpad"/>
             </a>
         </li>
         <li id="expose">
-        	<a href="#warning" data-rel="showOp">
-            	<em><span>Mission Control</span></em>
+            <a href="#warning" data-rel="showOp">
+                <em><span>Mission Control</span></em>
                 <img src="res/img/expose.png" alt="Mission Control"/>
             </a>
         </li>
         <li id="appStore">
-        	<a href="#warning" data-rel="showOp">
-            	<em><span>App Store</span></em>
+            <a href="#warning" data-rel="showOp">
+                <em><span>App Store</span></em>
                 <img src="res/img/appstore.png" alt="App Store"/>
             </a>
         </li>
         <li id="safari">
-        	<a href="#warning" data-rel="showOp">
-            	<em><span>Safari</span></em>
+            <a href="#warning" data-rel="showOp">
+                <em><span>Safari</span></em>
                 <img src="res/img/Safari.png" alt="Safari"/>
             </a>
         </li>
         <li id="iChat">
-        	<a href="#warning" data-rel="showOp">
-            	<em><span>iChat</span></em>
+            <a href="#warning" data-rel="showOp">
+                <em><span>iChat</span></em>
                 <img src="res/img/ichat.png" alt="iChat"/>
             </a>
         </li>
         <li id="facetime">
-        	<a href="#warning" data-rel="showOp">
-            	<em><span>FaceTime</span></em>
+            <a href="#warning" data-rel="showOp">
+                <em><span>FaceTime</span></em>
                 <img src="res/img/facetime.png" alt="Facetime"/>
             </a>
         </li>
         <li id="addressBook">
-        	<a href="#warning" data-rel="showOp">
-            	<em><span>Address Book</span></em>
+            <a href="#warning" data-rel="showOp">
+                <em><span>Address Book</span></em>
                 <img src="res/img/address.png" alt="Address Book"/>
             </a>
         </li>
         <li id="preview">
-        	<a href="#warning" data-rel="showOp">
-            	<em><span>Preview</span></em>
+            <a href="#warning" data-rel="showOp">
+                <em><span>Preview</span></em>
                 <img src="res/img/preview.png" alt="Preview"/>
             </a>
         </li>
         <li id="iTunes">
-        	<a href="#warning" data-rel="showOp">
-            	<em><span>iTunes</span></em>
+            <a href="#warning" data-rel="showOp">
+                <em><span>iTunes</span></em>
                 <img src="res/img/iTunes.png" alt="iTunes"/>
             </a>
         </li>
         <li id="preferences">
-        	<a href="#warning" data-rel="showOp">
-            	<em><span>System Preferences</span></em>
+            <a href="#warning" data-rel="showOp">
+                <em><span>System Preferences</span></em>
                 <img src="res/img/preferences.png" alt="System Preferences"/>
             </a>
         </li>
         <li id="trash">
-        	<a href="#trash" data-rel="showOpTrash">
-            	<em><span>Trash</span></em>
+            <a href="#trash" data-rel="showOpTrash">
+                <em><span>Trash</span></em>
                 <img src="res/img/trash.png" alt="Trash"/>
             </a>
         </li>
