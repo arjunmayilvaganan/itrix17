@@ -139,7 +139,7 @@ nav.control-window a.deactivate {
 }
 
 .window.mac {
-	width:308px;
+	width:360px;
 	left:60%;
 	top:35%;
 	margin:0px 0 0 -154px;
@@ -160,16 +160,19 @@ h1.title-mac {
 	text-align:center;
 	text-transform:capitalize;
 }
-#about-this-mac .container-inside img, #project .container-inside img, #spec .container-inside img {
+.other .container-inside img{
+	width: 180px !important;
+}
+.details .container-inside img, #project .container-inside img, #spec .container-inside img {
 	margin:0 0 5px 0;
 }
-#about-this-mac .about-this {
+.details .about-this {
 	color:#848484;
 	font-size:12px;
 	font-weight:bold;
 	margin:0;
 }
-#about-this-mac .about-this p:first-child {
+.details .about-this p:first-child {
 	margin:0 0 10px 0;
 }
 #project .about-this p:first-child, #spec .about-this p:first-child {
@@ -220,49 +223,49 @@ h1.title-mac {
 	font-size:12px;
 	line-height:12px;
 }
-#about-this-mac .about-this ul.hardware {
+.details .about-this ul.hardware {
 	margin:15px 0;
 	padding:0;
 }
-#about-this-mac .about-this ul.hardware li {
+.details .about-this ul.hardware li {
 	list-style:none;
-	font-size:11px;
+	font-size:14px;
 	font-weight:normal;
 	color:#000;
 	margin-bottom:15px;
 	text-align:left;
 }
-#about-this-mac .about-this ul.hardware li strong {
+.details .about-this ul.hardware li strong {
 	float:left;
 	text-align:right;
 	width:92px;
 	margin-right:15px;
 }
-#about-this-mac .container-inside .copyright {
+.details .container-inside .copyright {
 	margin-top:15px;
 	font-size:10px;
 	font-weight:normal;
 }
-#about-this-mac .container-inside .copyright p:first-child {
+.details .container-inside .copyright p:first-child {
 	margin-bottom:6px;	
 }
 
-#about-this-mac nav.control-window {
+.details nav.control-window {
 	height:12px;
 	top:2px;
 }
-#about-this-mac nav.control-window a {
+.details nav.control-window a {
     margin: 1px 0px 2px 1px;
     width: 10px;
     height: 10px;
 }
-#about-this-mac nav.control-window a:after {
+.details nav.control-window a:after {
     top: 1px;
 }
-#about-this-mac nav.control-window:hover a.close {
+.details nav.control-window:hover a.close {
 	background: #FD4E4E url(../img/buttons-hover.png) 0px -7px no-repeat;
 }
-#about-this-mac nav.control-window a.close:active {
+.details nav.control-window a.close:active {
     background: #c72f2b url(../img/buttons-hover.png) 0px -7px no-repeat;
 }
 

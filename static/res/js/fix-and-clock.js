@@ -192,8 +192,10 @@ $("body:not(#content span)").click(function() {
 });
 
 $("#content span").dblclick(function() {
-	$('#about-this-mac').show();
 	$('#finder').css('zIndex', '-1');
+	var targetid = "#"+$(this).attr('id')+"_details";
+	console.log(targetid);
+	$(targetid).show();
 
 });
 
@@ -237,6 +239,7 @@ function redirectPage(){
 	$('.window').delay(3000).queue(function() { $(this).addClass('windows-vis'); $(this).dequeue(); });
 	$('#finder').hide();
 	$('#content').hide();
+	$('.details').hide();
 	event.preventDefault();
 }
 
@@ -299,6 +302,7 @@ $(function() {
 			$('.window').delay(3000).queue(function() { $(this).addClass('windows-vis'); $(this).dequeue(); });
 			$('#finder').hide();
 			$('#content').hide();
+			$('.details').hide();
 			event.preventDefault();
 		}
 	});
