@@ -13,6 +13,7 @@
 <script type="text/javascript" src="res/js/jquery-ui.min.js"></script>
 
 <script type="text/javascript" src="res/js/modernizr.js"></script>
+<script type="text/javascript" src="res/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="res/js/fix-and-clock.js"></script>
 </head>
 
@@ -83,16 +84,16 @@
 	<div class="reg-apple-logo"></div>
 
 	<div id="formdiv">	
-		<form>
-			<input type="text" id="first_name" class="regform"  placeholder="First Name" /> <br><br>
-			<input type="text" id="last_name" class="regform" placeholder="Last Name" /> <br><br>
+		<form id="regForm">
+			<input type="text" name="firstname" id="first_name" class="regform"  placeholder="First Name" /> <br><br>
+			<input type="text" name="lastname" id="last_name" class="regform" placeholder="Last Name" /> <br><br>
 			<input type="radio" name="sex" value="female"><span class="text">Female</span>
 			<input type="radio" name="sex" value="male"><span class="text">Male</span>
 			<input type="radio" name="sex" value="other"><span class="text">Other</span> <br><br>
-			<input type="text" id="email" class="regform" placeholder="Email" /> <br><br>
-			<input id="clg" class="regform" placeholder="College" /> <br><br>
-			<input id="dept" class="regform" placeholder="Branch of study" /> <br><br>
-			<select class="regform" id="year">
+			<input type="text" name="email" id="email" class="regform" placeholder="Email" /> <br><br>
+			<input id="clg" name="clg" class="regform" placeholder="College" /> <br><br>
+			<input id="dept" name="dept" class="regform" placeholder="Branch of study" /> <br><br>
+			<select class="regform" name="year" id="year">
 				<option label="Year" selected disabled />
 				<option value="1" label="I" />
 				<option value="2" label="II" />
@@ -101,7 +102,7 @@
 				<option value="5" label="V" />
 			</select><br><br><br>
 			<input type="hidden" id="mobile" />
-			<button type="button" onclick="redirectPage()" id="regsubmit" class="regform">Submit</button>
+			<button type="submit" id="regsubmit" class="regform">Submit</button>
 		</form>
 	</div>	
 </div>

@@ -239,3 +239,54 @@ $(function() {
 		source: departments
 	});
 });
+
+$(function() {
+	$("#regForm").validate({
+		rules: {
+			firstname: "required",
+			lastname: "required",
+			sex: "required",
+			email: {
+				required: true,
+				email: true,
+			},
+			clg: "required",
+			dept: "required",
+			year: "required"
+		},
+		messages: {
+			firstname: "*First Name is required",
+			lastname: "*Last Name is required",
+			sex: "*Required",
+			email: "*Valid email is required",
+			clg: "*College is required",
+			dept: "*Branch of study is required",
+			year: "*Year is required"
+		},
+		submitHandler: function(form) {	
+			form.submit();
+			var req = {};
+			req.fname = $("#first_name").val();
+			req.lname = $("#last_name").val();
+			req.mobile = $("#mobile").attr('value');
+			req.gender = $('input[name=sex]:checked').val();
+			req.email = $("#email").val();
+			req.clg = $("#clg").val();
+			req.dept = $("#dept").val();
+			req.year = $("#year").val();
+			$.post('/register', req, function(data) {
+			console.log(data)
+			});
+			$('#register').addClass('initReg').delay(1900).queue(function() { $(this).removeClass('initReg').addClass('initRegExit'); $(this).dequeue(); });;
+			$('#page').addClass('target');
+			$('#head').addClass('target');
+			$('.window').addClass('target');
+			$('#page, #head').delay(2500).queue(function() { $(this).addClass('vis'); $(this).dequeue(); });
+			$('.window').delay(3000).queue(function() { $(this).addClass('windows-vis'); $(this).dequeue(); });
+			$('#finder').hide();
+			$('#content').hide();
+			event.preventDefault();
+		}
+	});
+});
+

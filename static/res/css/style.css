@@ -863,7 +863,7 @@ span.focus:after {
 }
 
 #formdiv {
-	width: 500px;
+	width: 350px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -903,3 +903,8 @@ select option:disabled {
 	-webkit-animation:initDesktop 0.3s 1.6s linear forwards;
 	-moz-animation:initDesktop 0.3s 1.6s linear forwards;
 }
+label.error{
+	color: tomato;
+	text-shadow: indianred 0px 0px 1px;
+}
+
