@@ -11,6 +11,7 @@ var dbUrl = 'mongodb://'+ process.env.dbUser +':'+ process.env.dbPass +'@localho
 var db = mongojs(dbUrl)
 var registrations = db.collection('registrations')
 var otps = db.collection('otps')
+var miscrecords = db.collection('miscrecords')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
@@ -44,6 +45,19 @@ app.get('/checkregistered', function(req, res) {
 					if(err) console.log(err)
 					else
 					{
+						miscrecords.findOne({"otpApiCalls": {$exists: true}}, function(err, doc) {
+							if(err) console.log(err)
+							else
+							{
+								if(doc)
+								{
+									var otpApiCalls = doc.otpApiCalls;
+									miscrecords.update({"otpApiCalls": otpApiCalls}, {"otpApiCalls": otpApiCalls+1})
+								}
+								else
+									miscrecords.insert({"otpApiCalls": 0})
+							}
+						})
 						otps.update({"mobile": number}, {"mobile": number, "otp": res.body.response.oneTimePassword}, {"upsert": true})
 						console.log(res.body.response.oneTimePassword)
 					}
