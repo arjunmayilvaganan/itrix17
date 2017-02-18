@@ -3,6 +3,8 @@ var bodyParser = require('body-parser');
 var mongojs = require('mongojs');
 var path = require('path');
 var sa = require('superagent');
+var rlogger = require('morgan');
+var fs = require('fs')
 
 var app = express();
 var port = process.env.PORT || 8080;
@@ -16,6 +18,8 @@ var miscrecords = db.collection('miscrecords');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('static'));
+app.use(rlogger('common', {stream: fs.createWriteStream('./access.log', {flags: 'a'})}))
+app.use(rlogger('dev'))
 
 app.get('/', function(req, res) {
 	res.send(index.html);
