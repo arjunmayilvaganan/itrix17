@@ -3,12 +3,13 @@ var bodyParser = require('body-parser');
 var mongojs = require('mongojs');
 var path = require('path');
 var sa = require('superagent');
-var rlogger = require('morgan');
-var elogger = require('winston');
+var logger = require('morgan');
 var fs = require('fs');
 
 var app = express();
 var port = process.env.PORT || 8080;
+var errorlogfile = fs.createWriteStream(__dirname + '/error.log', {flags : 'a'});
+var errorlog = process.stdout;
 
 var dbUrl = 'mongodb://'+ process.env.dbUser +':'+ process.env.dbPass +'@localhost:27017/itrix?authSource=admin';
 var db = mongojs(dbUrl);
@@ -19,9 +20,8 @@ var miscrecords = db.collection('miscrecords');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('static'));
-app.use(rlogger('common', {stream: fs.createWriteStream('./access.log', {flags: 'a'})}));
-app.use(rlogger('dev'));
-elogger.add(elogger.transports.File, {filename: './error.log', level: 'error', handleExceptions: true});
+app.use(logger('common', {stream: fs.createWriteStream('./access.log', {flags: 'a'})}));
+app.use(logger('dev'));
 
 app.get('/', function(req, res) {
 	res.send(index.html);
@@ -32,7 +32,10 @@ app.get('/checkregistered', function(req, res) {
 	console.log('Check if already registered, Mobile:', number);
 	registrations.findOne({"mobile": number}, function(err, doc) {
 		if(err)
-			elogger.log('error', err);
+		{
+			console.log(err);
+			errorlog.write(err+'\n');
+		}
 		else
 		{
 			if(doc)
@@ -46,12 +49,18 @@ app.get('/checkregistered', function(req, res) {
 				var reqBody = {'countryCode': '91', 'mobileNumber': number, 'getGeneratedOTP': true};
 				sa.post('https://sendotp.msg91.com/api/generateOTP').set('application-Key', appKey).send(reqBody).end(function(err, res) {
 					if(err)
-						elogger.log('error', err);
+					{
+						console.log(err);
+						errorlog.write(err+'\n');
+					}
 					else
 					{
 						miscrecords.findOne({"otpApiCalls": {$exists: true}}, function(err, doc) {
 							if(err)
-								elogger.log('error', err);
+							{
+								console.log(err);
+								errorlog.write(err+'\n');
+							}
 							else
 							{
 								if(doc)
@@ -79,7 +88,10 @@ app.get('/verifyotp', function(req, res) {
 	console.log('OTP Verification -', 'Number:', number, 'OTP:', otp);
 	otps.findOne({"mobile": number}, function(err, doc) {
 		if(err)
-			elogger.log('error', err);
+		{
+			console.log(err);
+			errorlog.write(err+'\n');
+		}
 		else
 		{
 			if(doc)
@@ -100,7 +112,8 @@ app.post('/register', function(req, res) {
 	registrations.insert(req.body, function(err) {
 		if(err)
 		{
-			elogger.log(err);
+			console.log(err);
+			errorlog.write(err+'\n');
 			res.send('Error occurred during registration');
 		}
 		else
