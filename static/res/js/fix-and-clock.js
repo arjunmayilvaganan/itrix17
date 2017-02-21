@@ -44,6 +44,7 @@ $(".submit").click(function(e) {
 			$.get('/checkregistered', req, function(data) {
 				if(data == 'registered')
 				{
+					$('#register').hide();
 					redirectPage();
 				}
 				else
@@ -219,7 +220,6 @@ $("#trash a[data-rel=close]").click(function(e) {
 //-----------------------------------------------------------------------------------
 
 function redirectPage(){
-	$('#register').hide();
 	$('#page').addClass('target');
 	$('#head').addClass('target');
 	$('.window').addClass('target');
@@ -282,6 +282,7 @@ $(function() {
 			$.post('/register', req, function(data) {
 			console.log(data)
 			});
+			$('#register').addClass('initReg').delay(1900).queue(function() { $(this).removeClass('initReg').addClass('initRegExit'); $(this).dequeue(); });;
 			redirectPage();
 		}
 	});
