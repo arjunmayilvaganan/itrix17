@@ -219,7 +219,7 @@ $("#trash a[data-rel=close]").click(function(e) {
 //-----------------------------------------------------------------------------------
 
 function redirectPage(){
-	$('#register').addClass('initReg').delay(1900).queue(function() { $(this).removeClass('initReg').addClass('initRegExit'); $(this).dequeue(); });;
+	$('#register').hide();
 	$('#page').addClass('target');
 	$('#head').addClass('target');
 	$('.window').addClass('target');
