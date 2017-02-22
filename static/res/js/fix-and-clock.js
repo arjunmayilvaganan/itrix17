@@ -193,11 +193,17 @@ $("body:not(#content span)").click(function() {
 });
 
 $("#content span").dblclick(function() {
-	$('#finder').css('zIndex', '-1');
+	$('#finder').css('zIndex', '-2');
 	var targetid = "#"+$(this).attr('id')+"_details";
 	console.log(targetid);
 	$(targetid).show();
 
+});
+
+$("a.about").click(function() {
+	var id = "#" + $(this).attr("data-info");
+	$(id + "_details").css('zIndex', '-1');
+	$(id + "_info").show();
 });
 
 $(".dock li a[data-rel=showOpTrash]").click(function(e) {
