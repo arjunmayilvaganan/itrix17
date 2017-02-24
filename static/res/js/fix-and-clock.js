@@ -23,12 +23,12 @@ $('#DateAbbr').html(dayNames[newDate.getDay()].substr(0,3) + " ");
 setInterval( function() {
 	var minutes = new Date().getMinutes();
 	$(".min, .mins").html(( minutes < 10 ? "0" : "" ) + minutes);
-    },1000);
+	},1000);
 	
 setInterval( function() {
 	var hours = new Date().getHours();
 	$(".hours, .hour").html(( hours < 10 ? "0" : "" ) + hours);
-    }, 1000);
+	}, 1000);
 	
 //-----------------------------------------------------------------------------------
 //	2.	Fix Classes after Validate Login
@@ -77,7 +77,7 @@ $(".submit").click(function(e) {
 				return false;
 			}
 		});
-    }
+	}
 });
 
 //-----------------------------------------------------------------------------------
@@ -114,68 +114,68 @@ var item = $('<div class="fresh"></div>').hide();
 var itemR = $('<div class="fresh"></div>').hide();
 
 $("a[data-rel=close]").click(function(e) {
-    e.preventDefault();
-    $(this.hash).fadeOut(200, function() {
+	e.preventDefault();
+	$(this.hash).fadeOut(200, function() {
 		$(this).css({ top: top, left: left });
 	});
 });
 
 $("a[data-rel=show]").click(function(e) {
-    e.preventDefault();
-    $(this.hash).show();
+	e.preventDefault();
+	$(this.hash).show();
 });
 
 $(".dock li a[data-rel=showOp]").click(function(e) {
-    e.preventDefault();
+	e.preventDefault();
 	$(this).addClass('bounce').delay(1600).queue(function() { $(this).removeClass('bounce'); $(this).append(item); item.fadeIn(500); $(this).dequeue(); });
-    $("#finder").delay(1630).queue(function() { $(this).show(); $(this).dequeue(); });
+	$("#finder").delay(1630).queue(function() { $(this).show(); $(this).dequeue(); });
 });
 
 $("#finder a[data-rel=close]").click(function(e) {
-    e.preventDefault();
+	e.preventDefault();
 	item.fadeOut(500);
-    $(this.hash).hide();
+	$(this.hash).hide();
 });
 
 $("#number").keydown(function (e) {
-        // Allow: backspace, delete, tab, escape, enter and .
-        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-             // Allow: Ctrl+A, Command+A
-            (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) || 
-             // Allow: home, end, left, right, down, up
-            (e.keyCode >= 35 && e.keyCode <= 40)) {
-                 // let it happen, don't do anything
-                 return;
+		// Allow: backspace, delete, tab, escape, enter and .
+		if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+			 // Allow: Ctrl+A, Command+A
+			(e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) || 
+			 // Allow: home, end, left, right, down, up
+			(e.keyCode >= 35 && e.keyCode <= 40)) {
+				 // let it happen, don't do anything
+				 return;
 		}
-        // Ensure that it is a number and stop the keypress
-        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-            e.preventDefault();
-        }
+		// Ensure that it is a number and stop the keypress
+		if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+			e.preventDefault();
+		}
 });
 
 $("ul#sidebarlinks li").click(function(e) {
-    e.preventDefault();
-    $("ul#sidebarlinks li.current_page").removeClass("current_page");
-    $(this).addClass("current_page");
-    $('#content').show();
-    if($(this).attr('id') == 'sidebarevent') {
-    	$('#content_workshop').hide();
-    	$('#content_intern').hide();
-    	$('#content_event').show();
+	e.preventDefault();
+	$("ul#sidebarlinks li.current_page").removeClass("current_page");
+	$(this).addClass("current_page");
+	$('#content').show();
+	if($(this).attr('id') == 'sidebarevent') {
+		$('#content_workshop').hide();
+		$('#content_intern').hide();
+		$('#content_event').show();
 		$('#content_sponsor').hide();
 		$('#content_contact').hide();
-    }
-    else if($(this).attr('id') == 'sidebarworkshop') {
-    	$('#content_workshop').show();
-    	$('#content_intern').hide();
-    	$('#content_event').hide();
+	}
+	else if($(this).attr('id') == 'sidebarworkshop') {
+		$('#content_workshop').show();
+		$('#content_intern').hide();
+		$('#content_event').hide();
 		$('#content_sponsor').hide();
 		$('#content_contact').hide();
-    }
-    else if($(this).attr('id') == 'sidebarinternship') {
-    	$('#content_workshop').hide();
-    	$('#content_intern').show();
-    	$('#content_event').hide();
+	}
+	else if($(this).attr('id') == 'sidebarinternship') {
+		$('#content_workshop').hide();
+		$('#content_intern').show();
+		$('#content_event').hide();
 		$('#content_sponsor').hide();
 		$('#content_contact').hide();
 	}
@@ -192,7 +192,7 @@ $("ul#sidebarlinks li").click(function(e) {
 		$('#content_event').hide();
 		$('#content_sponsor').hide();
 		$('#content_contact').show();
-    }
+	}
 });
 
 // folder click 
@@ -227,15 +227,15 @@ $("a.about").click(function() {
 });
 
 $(".dock li a[data-rel=showOpTrash]").click(function(e) {
-    e.preventDefault();
+	e.preventDefault();
 	$(this).addClass('bounce').delay(1600).queue(function() { $(this).removeClass('bounce'); $(this).append(itemR); itemR.fadeIn(500); $(this).dequeue(); });
-    $("#trash").delay(1630).queue(function() { $(this).show(); $(this).dequeue(); });
+	$("#trash").delay(1630).queue(function() { $(this).show(); $(this).dequeue(); });
 });
 
 $("#trash a[data-rel=close]").click(function(e) {
-    e.preventDefault();
+	e.preventDefault();
 	itemR.fadeOut(500);
-    $(this.hash).hide();
+	$(this.hash).hide();
 });
 
 

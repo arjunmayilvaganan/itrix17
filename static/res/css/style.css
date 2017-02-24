@@ -10,7 +10,7 @@
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } :focus { outline: 0; } ins { text-decoration: none; } del { text-decoration: line-through; } table { border-collapse: collapse; border-spacing: 0; }
 
 ::-moz-selection { background:rgba(124,196,255,0.7); }
-::selection      { background:rgba(124,196,255,0.7); }
+::selection		 { background:rgba(124,196,255,0.7); }
 
 html, body {
 	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
@@ -193,7 +193,7 @@ html, body {
 }
 
 #number::-moz-selection, .regform::-moz-selection { background:rgba(124,196,255,0.7); }
-#number::selection, .regform::selection      { background:rgba(124,196,255,0.7); }
+#number::selection, .regform::selection		 { background:rgba(124,196,255,0.7); }
 #number {
 	width:154px;
 	height:24px;
@@ -334,9 +334,9 @@ html, body {
 }
 #head nav#menu-dx ul li.wireless a {
 	background:url(../img/wireless-icon.png) 6px 2px no-repeat;
-    display: block;
-    position: relative;
-    text-indent: -9999px;
+	display: block;
+	position: relative;
+	text-indent: -9999px;
 	width:25px;
 	height:21px;
 	top:0px;
@@ -381,12 +381,12 @@ html, body {
 }
 #head nav#menu ul li.apple a {
 	background:url(../img/apple-logo.png) no-repeat 10px 1px;
-    display: block;
-    position: relative;
-    text-indent: -9999px;
-    top: 0;
+	display: block;
+	position: relative;
+	text-indent: -9999px;
+	top: 0;
 	padding:0 10px 0 10px;
-    width: 20px;
+	width: 20px;
 	height: 21px;
 }
 #head nav#menu ul li a {
@@ -417,20 +417,20 @@ html, body {
 
 #head nav#menu ul li ul.sublist {
 	float: left;
-    left: 0;
+	left: 0;
 	top:22px;
 	list-style:none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
+	margin: 0;
+	padding: 0;
+	position: absolute;
 	background:rgba(255,255,255,0.95);
 	box-shadow:0 6px 12px rgba(0,0,0,0.7);
 	border-radius:0 0 5px 5px;
 	visibility:hidden;
 }
 #head nav#menu ul li ul.sublist li {
-    clear: both;
-    padding: 0;
+	clear: both;
+	padding: 0;
 	margin:0;
 	padding:0 0 0 22px;
 	width:200px;
@@ -446,7 +446,7 @@ html, body {
 #head nav#menu ul li ul.sublist li a {
 	color:#000;
 	text-indent:0;
-    width: 200px;
+	width: 200px;
 	background-image:none;
 	padding:0;
 	font-weight:normal;
@@ -484,9 +484,9 @@ html, body {
 	display:inline-block;
 	width:0;
 	height:0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
-    border-left:9px solid rgba(0,0,0,0.5);
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent; 
+	border-left:9px solid rgba(0,0,0,0.5);
 	top:5px;
 	right:10px;
 	text-indent:-9999px;
@@ -500,12 +500,12 @@ html, body {
 }
 #head nav#menu ul li ul.sublist li ul.sublist-menu {
 	float: left;
-    left: 100%;
+	left: 100%;
 	top:-5px;
 	list-style:none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
+	margin: 0;
+	padding: 0;
+	position: absolute;
 	background:rgba(255,255,255,0.95);
 	box-shadow:4px 9px 12px rgba(0,0,0,0.7);
 	border-radius:0 5px 5px 5px;
@@ -513,8 +513,8 @@ html, body {
 	color:#000;
 }
 #head nav#menu ul li ul.sublist li ul.sublist-menu li {
-    clear: both;
-    padding: 0;
+	clear: both;
+	padding: 0;
 	margin:0;
 	padding:0 0 0 22px;
 	width:200px;
@@ -834,10 +834,10 @@ select option:disabled {
 }
 .itrix_text{
 	position: absolute;
-    width: 450px;
-    height: 250px;
-    top: -75px;
-    right: -180px;
+	width: 450px;
+	height: 250px;
+	top: -75px;
+	right: -180px;
 }
 label.error{
 	color: tomato;
