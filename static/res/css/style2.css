@@ -1,34 +1,14 @@
 @charset "UTF-8";
-html {
-  display: table;
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  margin: 0px;
-  padding: 50px;
-  display: table-cell;
-  vertical-align: middle;
-  font-family: "Lucida Grande", sans-serif;
-  font-size: 12px;
-  user-select: none;
-  text-shadow: 0px 1px 1px #fff;
-  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuMCIgeDI9IjEuMCIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzMzNzk5ZCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U4ZWJiNCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-  background: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #33799d), color-stop(100%, #e8ebb4));
-  background: -moz-linear-gradient(top left, #33799d, #e8ebb4);
-  background: -webkit-linear-gradient(top left, #33799d, #e8ebb4);
-  background: linear-gradient(to bottom right, #33799d, #e8ebb4);
-}
-
 ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
+
 ul li ul {
   font-size: 13px;
 }
+
 ul li ul li {
   padding: 0 0 3px 15px;
 }
@@ -55,8 +35,8 @@ i {
   height: 435px;
   margin: 0 auto;
 }
-#finder *::before,
-#finder *::after {
+
+#finder *::before, #finder *::after {
   content: "";
   position: absolute;
   display: block;
@@ -84,9 +64,8 @@ i {
   display: inline;
   left: 4px;
 }
-#traffic-light #red,
-#traffic-light #yellow,
-#traffic-light #green {
+
+#traffic-light #red, #traffic-light #yellow, #traffic-light #green {
   width: 12px;
   height: 12px;
   display: block;
@@ -106,18 +85,20 @@ i {
   -webkit-border-radius: 100px;
   border-radius: 100px;
 }
+
 #traffic-light #red {
   background-color: #f24443;
 }
+
 #traffic-light #yellow {
   background-color: #f0aa5a;
 }
+
 #traffic-light #green {
   background-color: #88be72;
 }
-#traffic-light:hover #red::after,
-#traffic-light:hover #yellow::after,
-#traffic-light:hover #green::after {
+
+#traffic-light:hover #red::after, #traffic-light:hover #yellow::after, #traffic-light:hover #green::after {
   position: absolute;
   top: -2px;
   left: 2px;
@@ -125,14 +106,17 @@ i {
   font-size: 13px;
   text-shadow: rgba(0, 0, 0, 0.6) 0px -1px;
 }
+
 #traffic-light:hover #red::after {
   content: "x";
   color: rgba(186, 23, 32, 0.5);
 }
+
 #traffic-light:hover #yellow::after {
   content: "-";
   color: rgba(167, 99, 34, 0.5);
 }
+
 #traffic-light:hover #green::after {
   left: 1px;
   content: "+";
@@ -144,6 +128,7 @@ i {
   font-size: 13px;
   line-height: 23px;
 }
+
 #windowname i {
   background: url("http://i.imgur.com/hhy5Y.png") no-repeat;
 }
@@ -151,6 +136,7 @@ i {
 #actions {
   height: 31px;
 }
+
 #actions input {
   width: 278px;
   height: 17px;
@@ -161,12 +147,7 @@ i {
   border-radius: 100px;
 }
 
-#back,
-#next,
-#iconV,
-#list,
-#grid,
-#coverflow {
+#back, #next, #iconV, #list, #grid, #coverflow {
   display: inline-block;
   position: relative;
   height: 20px;
@@ -187,8 +168,7 @@ i {
   border-radius: 4px;
 }
 
-#back,
-#next {
+#back, #next {
   width: 25px;
 }
 
@@ -200,6 +180,7 @@ i {
   border-radius: 4px 0 0 4px;
   color: #797979;
 }
+
 #back::after {
   content: "◄";
   top: 1px;
@@ -215,6 +196,7 @@ i {
   border-radius: 0 4px 4px 0;
   color: #a4a4a4;
 }
+
 #next::after {
   content: "◄";
   top: 4px;
@@ -227,10 +209,7 @@ i {
   transform: rotate(180deg);
 }
 
-#iconV,
-#list,
-#grid,
-#coverflow {
+#iconV, #list, #grid, #coverflow {
   width: 28px;
   border-left: 0px;
   border-right: 0px;
@@ -261,11 +240,13 @@ i {
   box-shadow: #676767 -1px 1px 4px -1px inset, #676767 0px 1px inset, #757575 0px 2px inset, #999999 0px -1px inset, #969696 0px -2px inset;
   text-shadow: 0px 1px 1px #545454;
 }
+
 #iconV::before {
   content: "▫▫";
   top: -2px;
   left: 8px;
 }
+
 #iconV::after {
   content: "▫▫";
   top: 4px;
@@ -276,6 +257,7 @@ i {
   left: -3px;
   font-size: 15px;
 }
+
 #list::after {
   content: "𝌆";
   left: 8px;
@@ -284,6 +266,7 @@ i {
 #grid {
   left: -7px;
 }
+
 #grid::before {
   top: 5px;
   left: 7px;
@@ -298,6 +281,7 @@ i {
   -webkit-box-shadow: #fff 0px 1px;
   box-shadow: #fff 0px 1px;
 }
+
 #grid::after {
   content: "";
   top: 6px;
@@ -318,6 +302,7 @@ i {
   -webkit-box-shadow: #e7e7e7 0px 1px inset, #e5e5e5 0px 2px inset, #bdbdbd 0px -1px inset, #bfbfbf 0px -2px inset;
   box-shadow: #e7e7e7 0px 1px inset, #e5e5e5 0px 2px inset, #bdbdbd 0px -1px inset, #bfbfbf 0px -2px inset;
 }
+
 #coverflow::before {
   content: "";
   top: 5px;
@@ -327,6 +312,7 @@ i {
   border-left: #4a4a4a 1px solid;
   border-right: #4a4a4a 1px solid;
 }
+
 #coverflow::after {
   content: "";
   top: 6px;
@@ -336,6 +322,7 @@ i {
   border-left: #4a4a4a 1px solid;
   border-right: #4a4a4a 1px solid;
 }
+
 #coverflow i.view {
   position: absolute;
   top: 6px;
@@ -357,12 +344,12 @@ i {
   background-image: -webkit-linear-gradient(#6c6c6c, #868686);
   background-image: linear-gradient(#6c6c6c, #868686);
 }
+
 #coverflow i.view::after {
   content: "";
 }
 
-#settings,
-#share {
+#settings, #share {
   display: inline-block;
   position: relative;
   height: 20px;
@@ -387,12 +374,14 @@ i {
   left: -9px;
   color: #4a4a4a;
 }
+
 #settings::before {
   content: "⚙";
   top: -4px;
   left: 7px;
   font-size: 22px;
 }
+
 #settings::after {
   content: "▴";
   top: 2px;
@@ -409,6 +398,7 @@ i {
   left: -5px;
   color: #a1a1a1;
 }
+
 #share::before {
   content: "";
   top: 5px;
@@ -425,6 +415,7 @@ i {
   -webkit-box-shadow: #fff 0px 1px;
   box-shadow: #fff 0px 1px;
 }
+
 #share::after {
   content: "➦";
   top: -1px;
@@ -470,7 +461,9 @@ i {
   float: left;
 }
 
+
 /* sidebar icons */
+
 .afiles {
   background-position: -3px -4px;
 }
@@ -507,7 +500,9 @@ i {
   background-position: -3px -195px;
 }
 
+
 /* sidebar selection */
+
 .current_page {
   color: #f3ffff;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
@@ -520,6 +515,7 @@ i {
   -webkit-box-shadow: #5aa5da 0 1px inset, #6fbae5 0 2px inset, #307cbc 0 -1px inset;
   box-shadow: #5aa5da 0 1px inset, #6fbae5 0 2px inset, #307cbc 0 -1px inset;
 }
+
 .current_page .afiles {
   background: url("http://i.imgur.com/wBIjH.png") no-repeat;
 }
