@@ -158,20 +158,40 @@ $("ul#sidebarlinks li").click(function(e) {
     $("ul#sidebarlinks li.current_page").removeClass("current_page");
     $(this).addClass("current_page");
     $('#content').show();
-    if($(this).attr('id') == 'sidebarevents') {
+    if($(this).attr('id') == 'sidebarevent') {
     	$('#content_workshop').hide();
     	$('#content_intern').hide();
     	$('#content_event').show();
+		$('#content_sponsor').hide();
+		$('#content_contact').hide();
     }
     else if($(this).attr('id') == 'sidebarworkshop') {
     	$('#content_workshop').show();
     	$('#content_intern').hide();
     	$('#content_event').hide();
+		$('#content_sponsor').hide();
+		$('#content_contact').hide();
     }
     else if($(this).attr('id') == 'sidebarinternship') {
     	$('#content_workshop').hide();
     	$('#content_intern').show();
     	$('#content_event').hide();
+		$('#content_sponsor').hide();
+		$('#content_contact').hide();
+	}
+	else if($(this).attr('id') == 'sidebarsponsor') {
+		$('#content_workshop').hide();
+		$('#content_intern').hide();
+		$('#content_event').hide();
+		$('#content_sponsor').show();
+		$('#content_contact').hide();
+	}
+	else if($(this).attr('id') == 'sidebarcontact') {
+		$('#content_workshop').hide();
+		$('#content_intern').hide();
+		$('#content_event').hide();
+		$('#content_sponsor').hide();
+		$('#content_contact').show();
     }
 });
 
