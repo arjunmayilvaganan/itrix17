@@ -15,6 +15,7 @@ var dbUrl = 'mongodb://'+ process.env.dbUser +':'+ process.env.dbPass +'@localho
 var db = mongojs(dbUrl);
 var registrations = db.collection('registrations');
 var otps = db.collection('otps');
+var payments = db.collection('payments');
 var miscrecords = db.collection('miscrecords');
 
 app.use(bodyParser.json());
@@ -124,6 +125,11 @@ app.post('/register', function(req, res) {
 	});
 })
 
+app.post('/paymentconfirmation', function(req, res) {
+	console.log(req.body);
+	payments.insert(req.body);
+	res.send('Thank You');
+})
 
 app.listen(port);
 console.log('Server started!\n Listening now at http://localhost:' + port);
