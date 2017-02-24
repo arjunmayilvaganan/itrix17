@@ -843,3 +843,6 @@ label.error{
 	color: tomato;
 	text-shadow: indianred 0px 0px 1px;
 }
+.cont{
+	line-height: 15px;
+}
