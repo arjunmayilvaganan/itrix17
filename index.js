@@ -5,6 +5,7 @@ var path = require('path');
 var sa = require('superagent');
 var logger = require('morgan');
 var fs = require('fs');
+var crypto = require('crypto');
 
 var app = express();
 var port = process.env.PORT || 8080;
@@ -127,8 +128,24 @@ app.post('/register', function(req, res) {
 
 app.post('/paymentconfirmation', function(req, res) {
 	console.log(req.body);
-	payments.insert(req.body);
-	res.send('Thank You');
+	var webhookobj = req.body;
+	var mac_provided = req.body.mac;
+	delete webhookobj.mac;
+	var message = '';
+	Object.keys(webhookobj).sort().forEach(function(v, i) {
+		message = message + webhookobj[v] + '|';
+	});
+	message = message.substring(0, message.length - 1);
+	mac_calculated = crypto.createHmac('sha1', process.env.pvtsalt).update(message).digest('hex');
+	if(mac_calculated == mac_provided)
+	{
+		payments.insert(req.body);
+		res.status(200).send('Thank You');
+	}
+	else
+	{
+		res.status(400).send('You are not authorised to perform this call');
+	}
 })
 
 app.listen(port);
