@@ -1027,6 +1027,14 @@ label.error {
 	line-height: 15px;
 }
 
+.desc {
+	text-align: left;
+	line-height: 15px;
+}
+
+ul.desc {
+	list-style-type: circle;
+}
 
 /*-----------------------------------------------------------------------------------*/
 
