@@ -884,7 +884,11 @@ a.button.blink:active, a.button.simple:active {
 	text-align: center;
 }
 
-#content_intern span.icon img, #content_sponsor span.icon img{
+#content_intern span.icon img {
+	width: 100px;
+}
+
+#content_sponsor span.icon img {
 	width: 120px;
 }
 .focus img {
