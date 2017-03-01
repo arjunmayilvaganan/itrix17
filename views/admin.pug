@@ -1,0 +1,37 @@
+doctype 5
+html(lang="en")
+	head
+		style(type='text/css').
+			body {
+				background: url(../res/img/gradient.png) no-repeat center, url(../res/img/background.png) repeat left top #000;
+			}
+			.regform {
+				width: 350px;
+				height: 28px;
+				border-radius: 3px;
+				border: 1px solid rgba(0, 0, 0, 0);
+				padding: 2px 26px 2px 5px;
+				font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+				-ms-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			#formdiv {
+				position: absolute;
+				width: 350px;
+				height: 136px;
+				top: 50%;
+				left: 50%;
+				margin: -68px 0 0 -150px;
+			}
+	body
+		#formdiv
+			form#regForm(action='/admin' method='post')
+				input#username.regform(type='text', name='username', placeholder='Enter Username')
+				br
+				br
+				input#password.regform(type='password', name='password', placeholder='Enter Password')
+				br
+				br
+				button#regsubmit.regform(type='submit') Submit

@@ -24,6 +24,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('static'));
 app.use(logger('common', {stream: fs.createWriteStream('./access.log', {flags: 'a'})}));
 app.use(logger('dev'));
+app.set('views', './views');
+app.set('view engine', 'pug');
 
 app.get('/', function(req, res) {
 	res.send(index.html);
@@ -160,6 +162,36 @@ app.post('/paymentconfirmation', function(req, res) {
 		res.status(400).send('You are not authorised to perform this call');
 	}
 })
+
+app.get('/admin', function(req, res) {
+	res.render('admin');
+})
+
+app.post('/admin', function(req, res) {
+	if(req.body.password == process.env.dbPass && req.body.username == process.env.dbUser)
+	{
+		registrations.find({}, function(err, docs) {
+			if(err)
+			{
+				console.log(err);
+				errorlog.write(err+'\n');
+				res.send('Woah! An error occurred while trying to fetch User registrations.');
+			}
+			else
+			{
+				if(docs)
+				{
+					res.render('registrations', {docs: docs});
+				}
+				else
+				{
+					res.send('Bummer! No user registrations found.');
+				}
+			}
+		});
+	}
+})
+
 
 app.listen(port);
 console.log('Server started!\n Listening now at http://localhost:' + port);
