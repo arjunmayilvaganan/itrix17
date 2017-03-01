@@ -108,20 +108,33 @@ app.get('/verifyotp', function(req, res) {
 })
 
 app.post('/register', function(req, res) {
-	if(!req.body.mobile || req.body.mobile == '')
-		res.send('One or more values missing');
 	console.log(req.body);
-	registrations.insert(req.body, function(err) {
+	registrations.findOne({"mobile": req.body.mobile}, function(err, doc) {
 		if(err)
 		{
 			console.log(err);
 			errorlog.write(err+'\n');
-			res.send('Error occurred during registration');
 		}
 		else
 		{
-			console.log("New Student registration Successful");
-			res.send("New Student registration Successful");
+			if(!doc)
+			{
+				registrations.insert(req.body, function(err) {
+					if(err)
+					{
+						console.log(err);
+						errorlog.write(err+'\n');
+						res.send('Error occurred during registration');
+					}
+					else
+					{
+						console.log("New Student registration Successful");
+						res.send("New Student registration Successful");
+					}
+				});
+			}
+			else
+				console.log("Mobile Number already exists!");
 		}
 	});
 })
