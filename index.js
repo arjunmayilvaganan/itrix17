@@ -136,7 +136,10 @@ app.post('/register', function(req, res) {
 				});
 			}
 			else
+			{
 				console.log("Mobile Number already exists!");
+				res.send("Duplicate Registration Attempted!");
+			}
 		}
 	});
 })
