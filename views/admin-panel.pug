@@ -30,7 +30,7 @@ html(lang="en")
 		script(type="text/javascript").
 			$(document).ready(function() {
 				$('button').click(function() {
-					window.location.href='admin/'+$(this).attr('id');
+					window.location.pathname='admin/'+$(this).attr('id');
 				});
 			});
 

@@ -29,6 +29,7 @@ module.exports = function(app, db)
 			res.clearCookie('remember', {path: '/admin'});
 			return res.redirect('/admin');
 		}
+		if(!req.cookies.remember) return res.redirect('/admin');
 		routes = ['registrations', 'nlp', 'cogser', 'cloud', 'networking', 'robotics', 'allworkshops'];
 		var registrations = db.collection('registrations');
 		var payments = db.collection('payments');
