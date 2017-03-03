@@ -184,7 +184,11 @@ $(document).ready(function() {
 		if ($(this).attr('id') == 'sidebarevent') {
 			$('#content_workshop').hide();
 			$('#content_intern').hide();
+
 			$('#content_event').show();
+			$('#folder_contents').hide();
+			$('#event_folders').show();
+
 			$('#content_sponsor').hide();
 			$('#content_contact').hide();
 		} else if ($(this).attr('id') == 'sidebarworkshop') {
@@ -226,8 +230,16 @@ $(document).ready(function() {
 			$(this).addClass("focus");
 		}
 	});
+	$(".folder").click(function(e) {
+		e.stopPropagation();
+		$(".focus").removeClass("focus");
+		$(this).addClass("focus");
+	});
 	$("body:not(#content span)").click(function() {
 		$("#content span").removeClass("focus");
+	});
+	$("body:not(.folder)").click(function() {
+		$(".folder").removeClass("focus");
 
 	});
 
@@ -237,6 +249,16 @@ $(document).ready(function() {
 		console.log(targetid);
 		$(targetid).show();
 
+	});
+	$("#content .folder").dblclick(function(e) {
+		var targetid = "#" + $(this).attr('id') + "_contents";
+		console.log(targetid);
+		$('#event_folders').hide();
+		$('#folder_contents').show();
+		$('#techfolder_contents').hide();
+		$('#nontechfolder_contents').hide();
+		$('#managefolder_contents').hide();
+		$(targetid).show();
 	});
 
 	$("a.about").click(function() {
@@ -287,6 +309,7 @@ function redirectPage() {
 	$('#finder').hide();
 	$('#content').hide();
 	$('.details').hide();
+	$('#folder_contents').hide();
 	event.preventDefault();
 }
 
