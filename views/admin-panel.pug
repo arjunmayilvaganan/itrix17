@@ -1,0 +1,60 @@
+doctype 5
+html(lang="en")
+	head
+		style(type='text/css').
+			body {
+				background: url(../res/img/gradient.png) no-repeat center;
+				background: url(../res/img/background.png) repeat left top #000;
+			}
+			.adminPanelForm {
+				width: 350px;
+				height: 28px;
+				border-radius: 3px;
+				border: 1px solid rgba(0, 0, 0, 0);
+				padding: 2px 26px 2px 5px;
+				font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+				-ms-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			#container {
+				position: absolute;
+				width: 350px;
+				height: 304px;
+				top: 50%;
+				left: 50%;
+				margin: -152px 0 0 -175px;
+			}
+		script(type="text/javascript", src='../res/js/jquery-3.1.1.min.js')
+		script(type="text/javascript").
+			$(document).ready(function() {
+				$('button').click(function() {
+					window.location.href='admin/'+$(this).attr('id');
+				});
+			});
+
+	body
+		#container
+			button#registrations.adminPanelForm Site Registrations
+			br
+			br
+			button#nlp.adminPanelForm NLP Workshop Registrations
+			br
+			br
+			button#cogser.adminPanelForm CognitiveServices Workshop Registrations
+			br
+			br
+			button#cloud.adminPanelForm Cloud Workshop Registrations
+			br
+			br
+			button#networking.adminPanelForm Networking Workshop Registrations
+			br
+			br
+			button#robotics.adminPanelForm Robotics Workshop Registrations
+			br
+			br
+			button#allworkshops.adminPanelForm All Workshop Registrations
+			br
+			br
+			button#logout.adminPanelForm Logout

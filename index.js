@@ -6,6 +6,7 @@ var sa = require('superagent');
 var logger = require('morgan');
 var fs = require('fs');
 var crypto = require('crypto');
+var cookieParser = require('cookie-parser');
 
 var app = express();
 var port = process.env.PORT || 8080;
@@ -26,6 +27,7 @@ app.use(logger('common', {stream: fs.createWriteStream('./access.log', {flags: '
 app.use(logger('dev'));
 app.set('views', './views');
 app.set('view engine', 'pug');
+app.use(cookieParser(process.env.otpAppKey));
 
 app.get('/', function(req, res) {
 	res.send(index.html);
@@ -166,34 +168,7 @@ app.post('/paymentconfirmation', function(req, res) {
 	}
 })
 
-app.get('/admin', function(req, res) {
-	res.render('admin');
-})
-
-app.post('/admin', function(req, res) {
-	if(req.body.password == process.env.dbPass && req.body.username == process.env.dbUser)
-	{
-		registrations.find({}, function(err, docs) {
-			if(err)
-			{
-				console.log(err);
-				errorlog.write(err+'\n');
-				res.send('Woah! An error occurred while trying to fetch User registrations.');
-			}
-			else
-			{
-				if(docs)
-				{
-					res.render('registrations', {docs: docs});
-				}
-				else
-				{
-					res.send('Bummer! No user registrations found.');
-				}
-			}
-		});
-	}
-})
+require('./admin-routes')(app, db);
 
 
 app.listen(port);
