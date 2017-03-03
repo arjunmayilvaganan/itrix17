@@ -30,6 +30,8 @@ module.exports = function(app, db)
 			return res.redirect('/admin');
 		}
 		routes = ['registrations', 'nlp', 'cogser', 'cloud', 'networking', 'robotics', 'allworkshops'];
+		var registrations = db.collection('registrations');
+		var payments = db.collection('payments');
 		if(routes.indexOf(req.params.listId) == -1)
 		{
 			res.send(req.params.listId+' does not exist!');
@@ -38,7 +40,7 @@ module.exports = function(app, db)
 		{
 			if(req.params.listId == 'registrations')
 			{
-				db.registrations.find({}, function(err, docs) {
+				registrations.find({}, function(err, docs) {
 					if(err)
 					{
 						console.log(err);
@@ -83,7 +85,7 @@ module.exports = function(app, db)
 					default:
 						res.send('Woah! An error occured while trying to fetch ' + req.params.listId + ' registrations.');
 				}
-				db.payments.find(query, function(err, docs) {
+				payments.find(query, function(err, docs) {
 					if(err)
 					{
 						console.log(err);
