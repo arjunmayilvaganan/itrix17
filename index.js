@@ -125,7 +125,9 @@ app.post('/register', function(req, res) {
 		{
 			if(!doc)
 			{
-				registrations.insert(req.body, function(err) {
+				var formdata = req.body;
+				formdata.country = formdata.country.substring(1);
+				registrations.insert(formdata, function(err) {
 					if(err)
 					{
 						console.log(err);
