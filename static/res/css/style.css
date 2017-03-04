@@ -280,15 +280,17 @@ html, body {
 	text-shadow: 1px 1px 2px #000;
 }
 
-#number::-moz-selection, .regform::-moz-selection {
+#number::-moz-selection, .regform::-moz-selection, #country::-moz-selection {
 	background: rgba(124, 196, 255, 0.7);
 }
 
-#number::selection, .regform::selection {
+#number::selection, .regform::selection, #country::selection {
 	background: rgba(124, 196, 255, 0.7);
 }
 
 #number {
+	position: absolute;
+	top: 35px;
 	width: 154px;
 	height: 24px;
 	box-shadow: 0 0 2px 3px #4189c3;
@@ -296,6 +298,7 @@ html, body {
 	border: 1px solid rgba(0, 0, 0, 0);
 	padding: 2px 26px 2px 5px;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	box-sizing: border-box;
 }
 
 #number.valid {
@@ -319,6 +322,17 @@ html, body {
 	letter-spacing: 0;
 }
 
+#country {
+	width: 154px;
+	height: 24px;
+	box-shadow: 0 0 2px 3px #4189c3;
+	border-radius: 3px;
+	border: 1px solid rgba(0, 0, 0, 0);
+	padding: 2px 26px 2px 5px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	box-sizing: border-box;
+}
+
 #pageLogin .user-avatar #switch {
 	position: absolute;
 	left: 50%;
@@ -334,8 +348,8 @@ html, body {
 
 #pageLogin .user-avatar #switch .submit {
 	position: absolute;
-	top: 3px;
-	right: 2px;
+	top: 35px;
+	left: 130px;
 	background: url(../img/submit.png) no-repeat;
 	width: 24px;
 	height: 24px;
@@ -365,8 +379,8 @@ html, body {
 .charge {
 	background: url(../img/loadinfologin.gif) no-repeat;
 	position: absolute;
-	top: 3px;
-	right: 2px;
+	top: 35px;
+	left: 130px;
 	width: 24px;
 	height: 24px;
 	text-indent: -9999px;

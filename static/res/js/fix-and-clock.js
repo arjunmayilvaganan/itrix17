@@ -49,13 +49,15 @@ $(document).ready(function() {
 		e.preventDefault();
 		if ($('#number').attr('data-rel') == 'initotp') {
 			var number = $('#number').val();
+			var country = $('#country').val();
 			if (number.length == 10) {
-				var req = { "number": number };
+				var req = { "number": number, "country": country };
 				$.get('/checkregistered', req, function(data) {
 					if (data == 'registered') {
 						$('#register').hide();
 						redirectPage();
 					} else {
+						$('#country').hide();
 						$('#number').addClass('valid');
 						$('.submit').removeClass('submit').addClass('charge');
 						$('#number').attr('placeholder', "Enter the OTP");
@@ -69,7 +71,8 @@ $(document).ready(function() {
 		} else if ($('#number').attr('data-rel') == 'initreg') {
 			var otp = $('#number').val();
 			var number = $('#number').attr('number');
-			var req = { "otp": otp, "number": number };
+			var country = $('#country').val();
+			var req = { "otp": otp, "number": number, "country": country };
 			$.get('/verifyotp', req, function(data) {
 				if (data.trim() == 'true') {
 					$("number").addClass('valid');
