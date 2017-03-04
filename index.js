@@ -35,6 +35,7 @@ app.get('/', function(req, res) {
 
 app.get('/checkregistered', function(req, res) {
 	var number = req.query.number;
+	var countryCode = req.query.country.substring(1);
 	console.log('Check if already registered, Mobile:', number);
 	registrations.findOne({"mobile": number}, function(err, doc) {
 		if(err)
@@ -52,7 +53,7 @@ app.get('/checkregistered', function(req, res) {
 			else
 			{
 				var appKey = process.env.otpAppKey;
-				var reqBody = {'countryCode': '91', 'mobileNumber': number, 'getGeneratedOTP': true};
+				var reqBody = {'countryCode': countryCode, 'mobileNumber': number, 'getGeneratedOTP': true};
 				sa.post('https://sendotp.msg91.com/api/generateOTP').set('application-Key', appKey).send(reqBody).end(function(err, res) {
 					if(err)
 					{
@@ -78,7 +79,7 @@ app.get('/checkregistered', function(req, res) {
 									miscrecords.insert({"otpApiCalls": 0});
 							}
 						})
-						otps.update({"mobile": number}, {"mobile": number, "otp": res.body.response.oneTimePassword}, {"upsert": true});
+						otps.update({"countryCode": countryCode, "mobile": number}, {"countryCode": countryCode, "mobile": number, "otp": res.body.response.oneTimePassword}, {"upsert": true});
 						console.log('OTP response from sendOTP endpoint:', res.body.response.oneTimePassword);
 					}
 				});
@@ -91,8 +92,9 @@ app.get('/checkregistered', function(req, res) {
 app.get('/verifyotp', function(req, res) {
 	var number = req.query.number;
 	var otp = req.query.otp;
+	var countryCode = req.query.country.substring(1);
 	console.log('OTP Verification -', 'Number:', number, 'OTP:', otp);
-	otps.findOne({"mobile": number}, function(err, doc) {
+	otps.findOne({"countryCode": countryCode, "mobile": number}, function(err, doc) {
 		if(err)
 		{
 			console.log(err);
