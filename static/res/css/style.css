@@ -291,6 +291,7 @@ html, body {
 #number {
 	position: absolute;
 	top: 35px;
+	left: 0px;
 	width: 154px;
 	height: 24px;
 	box-shadow: 0 0 2px 3px #4189c3;
