@@ -359,6 +359,7 @@ $(function() {
 			req.fname = $("#first_name").val();
 			req.lname = $("#last_name").val();
 			req.mobile = $("#mobile").attr('value');
+			req.country = $("#country").val();
 			req.gender = $('input[name=sex]:checked').val();
 			req.email = $("#email").val();
 			req.clg = $("#clg").val();
