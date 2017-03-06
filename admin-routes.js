@@ -64,6 +64,7 @@ module.exports = function(app, db)
 			else
 			{
 				query = {};
+				query.status = "Credit";
 				switch(req.params.listId)
 				{
 					case 'nlp':
