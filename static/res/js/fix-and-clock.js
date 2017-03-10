@@ -214,6 +214,8 @@ $(document).ready(function() {
 			$('#content_contact').hide();
 		} else if ($(this).attr('id') == 'sidebarcontact') {
 			$('#content_workshop').hide();
+			$('#cfolder_contents').hide();
+			$('#contact_folders').show();
 			$('#content_intern').hide();
 			$('#content_event').hide();
 			$('#content_sponsor').hide();
@@ -255,12 +257,25 @@ $(document).ready(function() {
 	});
 	$("#content .folder").dblclick(function(e) {
 		var targetid = "#" + $(this).attr('id') + "_contents";
-		console.log(targetid);
-		$('#event_folders').hide();
-		$('#folder_contents').show();
-		$('#techfolder_contents').hide();
-		$('#nontechfolder_contents').hide();
-		$('#managefolder_contents').hide();
+		var id = $(this).parent('div').attr("id");
+		if (id == "event_folders") {
+			$('#event_folders').hide();
+			$('#folder_contents').show();
+			$('#techfolder_contents').hide();
+			$('#nontechfolder_contents').hide();
+			$('#managefolder_contents').hide();
+		} else {
+			$('#contact_folders').hide();
+			$('#cfolder_contents').show();
+			$('#corefolder_contents').hide();
+			$('#eventfolder_contents').hide();
+			$('#workshopfolder_contents').hide();
+			$('#logisticsfolder_contents').hide();
+			$('#accomodationfolder_contents').hide();
+			$('#marketingfolder_contents').hide();
+			$('#techtfolder_contents').hide();
+			$('#hospitalityfolder_contents').hide();
+		}
 		$(targetid).show();
 	});
 
@@ -313,6 +328,7 @@ function redirectPage() {
 	$('#content').hide();
 	$('.details').hide();
 	$('#folder_contents').hide();
+	$('#cfolder_contents').hide();
 	event.preventDefault();
 }
 
