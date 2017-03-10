@@ -249,10 +249,34 @@ $(document).ready(function() {
 	});
 
 	$("#content span").dblclick(function() {
-		$('#finder').css('zIndex', '-2');
-		var targetid = "#" + $(this).attr('id') + "_details";
-		console.log(targetid);
-		$(targetid).show();
+		var id = $(this).parent('div').attr('id');
+		if (id == "content_sponsor") {
+			var title = $(this).attr('id');
+			var site = "";
+			if(title == "networkgeek-spo"){
+				site = "http://networkgeek.in/";
+			}
+			else if (title == "uniq"){
+				site = "http://www.uniqtechnologies.co.in/";
+			}
+			else if (title == "milkymist"){
+				site = "http://www.milkymist.in/";
+			}
+			else if (title == "cosgrid-spo"){
+				site = "http://www.cosgrid.com/";
+			}
+			var win = window.open(site , '_blank');
+			if (win) {
+				win.focus();
+			} else {
+				alert('Please allow popups for this website');
+			}
+		} else {
+			$('#finder').css('zIndex', '-2');
+			var targetid = "#" + $(this).attr('id') + "_details";
+			console.log(targetid);
+			$(targetid).show();
+		}
 
 	});
 	$("#content .folder").dblclick(function(e) {
