@@ -1,0 +1,75 @@
+head
+	style(type='text/css').
+		body {
+			background-color: #E1EEF4;
+		}
+		.datagrid table {
+			border-collapse: collapse; text-align: left; width: 100%;
+		}
+		.datagrid {
+			font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 1px solid #006699; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;
+		}
+		.datagrid table td, .datagrid table th {
+			padding: 3px 10px;
+		}
+		.datagrid table thead th {
+			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #00557F) );background:-moz-linear-gradient( center top, #006699 5%, #00557F 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F');background-color:#006699; color:#FFFFFF; font-size: 15px; font-weight: bold; border-left: 1px solid #0070A8; 
+		}
+		.datagrid table thead th:first-child {
+			border: none; 
+		}
+		.datagrid table tbody td {
+			color: #00496B; border-left: 1px solid #E1EEF4;font-size: 12px;font-weight: normal;
+		}
+		.datagrid table tbody .alt td {
+			background: #E1EEF4; color: #00496B;
+		}
+		.datagrid table tbody td:first-child {
+			border-left: none; 
+		}
+		.datagrid table tbody tr:last-child td {
+			border-bottom: none;
+		}
+
+body
+	h3(style='color: #00496B; font: Arial, Helvetica, sans-serif;') #{workshop}
+	.datagrid
+		table
+			thead
+				tr
+					th Serial Number
+					th First Name
+					th Last Name
+					th Team Members
+					th Mobile
+					th Gender
+					th E-Mail
+					th College
+					th Department
+					th Year
+			tbody
+				-for(var i = 0; i < docs.length; i++)
+					if(i%2 == 0)
+						tr
+							td #{i+1}
+							td #{docs[i].fname}
+							td #{docs[i].lname}
+							td #{docs[i].nop}
+							td #{docs[i].mobile}
+							td #{docs[i].gender}
+							td #{docs[i].email}
+							td #{docs[i].clg}
+							td #{docs[i].dept}
+							td #{docs[i].year}
+					else
+						tr.alt
+							td #{i+1}
+							td #{docs[i].fname}
+							td #{docs[i].lname}
+							td #{docs[i].nop}
+							td #{docs[i].mobile}
+							td #{docs[i].gender}
+							td #{docs[i].email}
+							td #{docs[i].clg}
+							td #{docs[i].dept}
+							td #{docs[i].year}

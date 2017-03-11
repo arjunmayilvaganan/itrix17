@@ -30,9 +30,10 @@ module.exports = function(app, db)
 			return res.redirect('/admin');
 		}
 		if(!req.cookies.remember) return res.redirect('/admin');
-		routes = ['registrations', 'nlp', 'cogser', 'cloud', 'networking', 'robotics', 'allworkshops'];
+		routes = ['registrations', 'nlp', 'cogser', 'cloud', 'networking', 'robotics', 'allworkshops', 'codher'];
 		var registrations = db.collection('registrations');
 		var payments = db.collection('payments');
+		var codher = db.collection('codher');
 		if(routes.indexOf(req.params.listId) == -1)
 		{
 			res.send(req.params.listId+' does not exist!');
@@ -57,6 +58,28 @@ module.exports = function(app, db)
 						else
 						{
 							res.send('Bummer! No user registrations found.');
+						}
+					}
+				});
+			}
+			else if(req.params.listId == 'codher')
+			{
+				codher.find({}, function(err, docs) {
+					if(err)
+					{
+						console.log(err);
+						errorlog.write(err+'\n');
+						res.send('Woah! An error occurred while trying to fetch codHer registrations.');
+					}
+					else
+					{
+						if(docs)
+						{
+							res.render(req.params.listId, {docs: docs});
+						}
+						else
+						{
+							res.send('Bummer! No codHer registrations found.');
 						}
 					}
 				});
