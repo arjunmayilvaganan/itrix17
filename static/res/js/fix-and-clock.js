@@ -356,6 +356,14 @@ $(document).ready(function() {
 		$(this.hash).hide();
 	});
 
+	$("#codher_register").click(function(e) {
+		e.preventDefault();
+		var mobile = $("#number").val();
+		var nop = $("#nop").val();
+		$.post("/codher_register", {mobile: mobile, nop: nop}, function(data) {
+			alert(data);
+		});
+	});
 
 });
 

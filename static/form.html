@@ -1,0 +1,133 @@
+<html lang="en-US" class="no-js">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Microsoft Cognitive Services Hackathon</title>
+	<!-- favicon -->
+	<link rel="icon" type="image/png" sizes="32x32" href="res/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="res/img/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="res/img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="res/img/favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="res/img/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<!-- stylesheets -->
+	<link rel="stylesheet" type="text/css" media="screen" href="res/css/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="res/css/main.css" />
+	<style>
+		textarea.regform{
+			height: 112px;
+		}
+		.member{
+			visibility: hidden;
+		}
+		a:link{
+			text-decoration: none;
+			color: white;
+		}
+		a:hover{
+			text-decoration: none;
+			color: red;
+		}
+		a:visited{
+			text-decoration: none;
+			color: white;
+		}
+		a:active{
+			text-decoration: none;
+			color: white;
+		}
+	</style>
+	<!-- scripts -->
+	<script type="text/javascript" src="res/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="res/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="res/js/modernizr.js"></script>
+	<script type="text/javascript" src="res/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="res/js/fix-and-clock.js"></script>
+	<script>
+		function showMember(){
+			$(".member").css("visibility", "visible");
+		}
+		function hideMember(){
+			$(".member").css("visibility", "hidden");
+		}
+		$(function() {
+			$("#regHackathon").validate({
+				rules: {
+					teamname: "required",
+					m1name: "required",
+					m1phone: "required",
+					m1email: {
+						required: true,
+						email: true,
+					},
+					m2name: "required",
+					m2phone: "required",
+					m2email: {
+						required: true,
+						email: true,
+					},
+					abstract: "required"
+				},
+				messages: {
+					teamname: "*Team Name is required",
+					m1name: "*Name is required",
+					m1phone: "*Phone number is required",
+					m1email: "*Valid email is required",
+					m2name: "*Name is required",
+					m2phone: "*Phone number is required",
+					m2email: "*Valid email is required",
+					abstract: "*Required"
+				}
+			});
+		});
+	</script>
+</head>
+
+<body>
+<div id="register">
+	<div>
+		<form id="regHackathon">
+			<input type="text" name="teamname" id="teamname" class="regform" placeholder="Team Name" />
+			<br>
+			<br>
+			<span class="text">Members</span>
+			<br>
+			<input type="radio" name="members" value="2" onclick="javascript:hideMember();"><span class="text">2</span>
+			<input type="radio" name="members" value="3" onclick="javascript:showMember();"><span class="text">3</span>
+			<br>
+			<br>
+			<span class="text">Member 1</span><br>
+			<input type="text" name="m1name" id="m1name" class="regform" placeholder="Name" />
+			<input type="text" name="m1phone" id="m1phone" class="regform" placeholder="Phone Number" />
+			<input type="text" name="m1email" id="m1email" class="regform" placeholder="Email" />
+			<br>
+			<br>
+			<span class="text">Member 2</span><br>
+			<input type="text" name="m2name" id="m2name" class="regform" placeholder="Name" />
+			<input type="text" name="m2phone" id="m2phone" class="regform" placeholder="Phone Number" />
+			<input type="text" name="m2email" id="m2email" class="regform" placeholder="Email" />
+			<br>
+			<br><br>
+			<span class="text member">Member 3</span><br>
+			<input type="text" name="m3name" id="m3name" class="regform member" placeholder="Name" />
+			<input type="text" name="m3phone" id="m3phone" class="regform member" placeholder="Phone Number" />
+			<input type="text" name="m3email" id="m3email" class="regform member" placeholder="Email" />
+			<br>
+			<br>
+			<textarea id="abstract" name="abstract" class="regform" placeholder="Abstract of Idea(Within 1000 characters)"></textarea><br><br>
+			<input type="checkbox" id="cortana" name="cortana"/><span class="text"><a href="https://www.microsoft.com/en-us/cloud-platform/cortana-intelligence-suit" target="_blank">MS Cortana Intelligence Suite</a></span><br>
+			<input type="checkbox" id="cogser" name="cogser"/><span class="text"><a href="https://www.microsoft.com/cognitive-services" target="_blank">MS Cognitive Services</a></span><br>
+			<input type="checkbox" id="cntk" name="cntk"/><span class="text"><a href="https://www.microsoft.com/en-us/research/product/cognitive-toolkit/" target="_blank">Cognitive Toolkit (CNTK)</a></span><br>
+			<input type="checkbox" id="bing" name="bing"/><span class="text"><a href="https://azure.microsoft.com/en-us/services/cognitive-services/search/" target="_blank">Bing APIs</a></span><br>
+			<input type="checkbox" id="azure" name="azure"/><span class="text"><a href="https://studio.azureml.net/" target="_blank">Azure ML Studio</a></span><br>
+			<input type="checkbox" id="mran" name="mran"/><span class="text"><a href="https://mran.microsoft.com/open/" target="_blank">MS R Application Network (MRAN)</a></span><br>
+			<input type="checkbox" id="powerbi" name="powerbi"/><span class="text"><a href="https://powerbi.microsoft.com/en-us/" target="_blank">MS Power BI</a></span><br>
+			<input type="checkbox" id="wiot" name="wiot"/><span class="text"><a href="https://developer.microsoft.com/en-us/windows/iot" target="_blank">Windows IoT</a></span>
+			<br>
+			<br>
+			<br>
+			<button type="submit" class="regform">Submit</button>
+		</form>
+	</div>
+</div>

@@ -19,6 +19,7 @@ var registrations = db.collection('registrations');
 var otps = db.collection('otps');
 var payments = db.collection('payments');
 var miscrecords = db.collection('miscrecords');
+var codher = db.collection('codher');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -170,6 +171,46 @@ app.post('/paymentconfirmation', function(req, res) {
 	{
 		res.status(400).send('You are not authorised to perform this call');
 	}
+})
+
+app.post('/codher_register', function(req, res) {
+	console.log('New codher registration: ', req.body);
+	var mobile = req.body.mobile;
+	var nop = req.body.nop;
+	codher.findOne({"mobile": req.body.mobile}, function(err, doc) {
+		if(err)
+		{
+			console.log(err);
+			errorlog.write(err+'\n');
+		}
+		else
+		{
+			if(!doc)
+			{
+				registrations.findOne({"mobile": mobile}, function(err, doc) {
+					doc.nop = nop;
+					codher.insert(doc, function(err) {
+						if(err)
+						{
+							console.log(err);
+							errorlog.write(err+'\n');
+							res.send('Error occurred during codher registration');
+						}
+						else
+						{
+							console.log("codher registration Successful");
+							res.send("codher registration Successful");
+						}
+					});
+				});
+			}
+			else
+			{
+				console.log("Already registered for codher!");
+				res.send("Already registered for codher!");
+			}
+		}
+	});
 })
 
 require('./admin-routes')(app, db);
