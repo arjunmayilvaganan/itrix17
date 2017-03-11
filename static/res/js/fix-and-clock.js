@@ -170,6 +170,16 @@ $(document).ready(function() {
 		});
 		$("#finder").delay(1630).queue(function() {
 			$(this).show();
+			$("ul#sidebarlinks li.current_page").removeClass("current_page");
+			$("ul#sidebarlinks li#sidebarevent").addClass('current_page');
+			$('#content').show();
+			$('#content_workshop').hide();
+			$('#content_intern').hide();
+			$('#content_event').show();
+			$('#folder_contents').hide();
+			$('#event_folders').show();
+			$('#content_sponsor').hide();
+			$('#content_contact').hide();
 			$(this).dequeue();
 		});
 	});
