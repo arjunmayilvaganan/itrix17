@@ -216,3 +216,14 @@ i{display:inline-block;width:19px;height:19px;position:relative;top:4px;backgrou
 .current_page .afiles{background:url("http://i.imgur.com/wBIjH.png") no-repeat}
 .register_footer {position: absolute;right: auto;bottom: 0;left: auto;padding: 1rem;text-align: center;max-width: 120px}
 .register_footer img{margin-left: -23px;padding: 1rem;max-width: 120px}
+.mytypeform-share.button{    padding-bottom: 2px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 3px;
+    position: relative;
+    text-align: left;
+    text-decoration: none !important;
+    text-shadow: none;
+    vertical-align: middle;
+	font-size:12px;
+}

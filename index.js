@@ -20,6 +20,7 @@ var otps = db.collection('otps');
 var payments = db.collection('payments');
 var miscrecords = db.collection('miscrecords');
 var codher = db.collection('codher');
+var cogser = db.collection('cogser');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
