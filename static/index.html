@@ -21,6 +21,7 @@
 	<script type="text/javascript" src="res/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="res/js/modernizr.js"></script>
 	<script type="text/javascript" src="res/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="res/js/notify.min.js"></script>
 	<script type="text/javascript" src="res/js/fix-and-clock.js"></script>
 </head>
 
@@ -98,7 +99,8 @@
 								<option value="+43" label="+43"></option>
 								<option value="+994" label="+994"></option>
 								<option value="+973" label="+973"></option>
-								<option value="+880" label="+880"></option></option>
+								<option value="+880" label="+880"></option>
+								</option>
 								<option value="+375" label="+375"></option>
 								<option value="+32" label="+32"></option>
 								<option value="+501" label="+501"></option>
@@ -1253,7 +1255,7 @@
 							</ul>
 					</div>
 					<form>
-					Number of Participants:
+						Number of Participants:
 						<select name="nop" id="nop">
 							<option label="1" label="1" selected>1</option>
 							<option value="2" label="2">2</option>
@@ -1674,8 +1676,7 @@
 						<p class="desc">
 							Here comes the Microsoft AI Hackathon along with a 2 hour session on Microsoft Cognitive Services. "Tap into the power of machine learning with easy-to-use REST APIs" Put Intelligence into work by using the Computer Vision APIs such as Emotion API, Face API, Video APIs and lot more!!
 							<br>
-							<br>
-							Requirements
+							<br> Requirements
 							<ul class="desc">
 								<li>Team of 2 or 3</li>
 								<li>Laptops</li>
@@ -2524,8 +2525,32 @@
 		</div>
 	</div>
 	<!-- typeform script -->
-	<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm_share',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share1-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()</script>
-	
+	<script>
+	(function() {
+		var qs, js, q, s, d = document,
+			gi = d.getElementById,
+			ce = d.createElement,
+			gt = d.getElementsByTagName,
+			id = 'typef_orm_share',
+			b = 'https://s3-eu-west-1.amazonaws.com/share.typeform.com/';
+		if (!gi.call(d, id)) {
+			js = ce.call(d, 'script');
+			js.id = id;
+			js.src = b + 'share.js';
+			q = gt.call(d, 'script')[0];
+			q.parentNode.insertBefore(js, q)
+		}
+		id = id + '_';
+		if (!gi.call(d, id)) {
+			qs = ce.call(d, 'link');
+			qs.rel = 'stylesheet';
+			qs.id = id;
+			qs.href = b + 'share1-button.css';
+			s = gt.call(d, 'head')[0];
+			s.appendChild(qs, s)
+		}
+	})()
+	</script>
 	<!-- INSTAMOJO SCRIPT-->
 	<script src="https://d2xwmjc4uy2hr5.cloudfront.net/im-embed/im-embed.min.js"></script>
 	<!-- GOOGLE ANALYTICS SCRIPT-->
