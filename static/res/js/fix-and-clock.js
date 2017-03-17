@@ -41,50 +41,8 @@ $(document).ready(function() {
 		$(".hours, .hour").html((hours < 10 ? "0" : "") + hours);
 	}, 1000);
 
-	//-----------------------------------------------------------------------------------
-	//	7.	notifications
-	//-----------------------------------------------------------------------------------
-	$.notify.addStyle('foo', {
-		html: "<div>" +
-			"<div class='clearfix'>" +
-			"<div class='title' data-notify-html='title'/>" +
-			"<div class='buttons'>" +
-			"<button class='no'>Cancel</button>" +
-			"<button class='yes' data-notify-text='button'></button>" +
-			"</div>" +
-			"</div>" +
-			"</div>"
-	});
 
-	//listen for click events from this style
-	$(document).on('click', '.notifyjs-foo-base .no', function() {
-		//programmatically trigger propogating hide event
-		$(this).trigger('notify-hide');
-	});
-	$(document).on('click', '.notifyjs-foo-base .yes', function() {
-		//show button text
-		var win = window.open('http://www.cos.itrix.in/', '_blank');
-		if (win) {
-			win.focus();
-		} else {
-			alert('Please allow popups for this website');
-		}
-		//hide notification
-		$(this).trigger('notify-hide');
-	});
 
-	function notificationcall() {
-		if ($('#page').hasClass('target').toString()) {
-			$.notify({
-				title: 'The chambers has been opened.visit cos.itrix.in ?',
-				button: 'Confirm'
-			}, {
-				style: 'foo',
-				autoHide: false,
-				clickToHide: false
-			});
-		}
-	}
 	//-----------------------------------------------------------------------------------
 	//	3.	Fix Classes after Validate Login
 	//-----------------------------------------------------------------------------------
@@ -117,7 +75,6 @@ $(document).ready(function() {
 						$('.details').hide();
 						$('#folder_contents').hide();
 						$('#cfolder_contents').hide();
-						notificationcall();
 					} else {
 						$('#country').hide();
 						$('#number').addClass('valid');
@@ -487,7 +444,6 @@ $(function() {
 			$('.details').hide();
 			$('#folder_contents').hide();
 			$('#cfolder_contents').hide();
-			notificationcall();
 		}
 	});
 });
