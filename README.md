@@ -1,5 +1,5 @@
 # ITRIX 2017
-A interactive website developed for the symposium of IT department of CEG that was held in 2017. The website features a MacOS theme.
+An interactive website developed for the symposium of IT department of CEG that was held in 2017. The website features a MacOS theme.
 
 ## Capabilities
 1. Students can register by providing their contact number
