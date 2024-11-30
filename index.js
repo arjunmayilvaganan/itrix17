@@ -39,6 +39,8 @@ app.get('/checkregistered', function(req, res) {
 	var number = req.query.number;
 	var countryCode = req.query.country.substring(1);
 	console.log('Check if already registered, Mobile:', number);
+	return res.send('registered');
+	// BELOW LINES IGNORED NOW SINCE SYMPOSIUM HAS LONG ENDED
 	registrations.findOne({"mobile": number}, function(err, doc) {
 		if(err)
 		{

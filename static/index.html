@@ -79,7 +79,7 @@
 				<div id="switch">
 					<div class="validate">
 						<form action="#register">
-							<select name="country" id="country">
+							<select name="country" id="country" style="display: none;">
 								<option value="+91" label="+91" selected></option>
 								<option value="+7" label="+7"></option>
 								<option value="+995" label="+995"></option>
@@ -287,7 +287,8 @@
 								<option value="+260" label="+260"></option>
 								<option value="+263" label="+263"></option>
 							</select>
-							<input type="text" id="number" placeholder="Phone number" maxlength="10" data-rel="initotp" />
+							<input type="text" id="number" value="9876543210" placeholder="Phone number" maxlength="10" data-rel="initotp" />
+							<input type="text" id="dummybutton" value="Press arrow" maxlength="10" data-rel="initotp" />
 							<input type="submit" class="submit" />
 						</form>
 					</div>
